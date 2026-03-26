@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ferrier Architecture Studio — Los Angeles</title>
+  <meta name="description" content="Ferrier Architecture Studio designs refined residential and mixed-use buildings in Los Angeles. Principals Graham Ferrier and Keely Colcleugh." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#hero" class="logo" aria-label="Ferrier Architecture Studio — home">
+        <span class="logo-mark">FAS</span>
+        <span class="logo-full">Ferrier Architecture Studio</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#studio" class="nav-link">Studio</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="#work" class="mobile-nav-link">Work</a>
+      <a href="#studio" class="mobile-nav-link">Studio</a>
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="hero-media">
+        <img
+          src="https://picsum.photos/seed/fas-hero-arch/1920/1080"
+          alt="Contemporary residential architecture in Los Angeles"
+          class="hero-img"
+          loading="eager"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Los Angeles — Est. 2010</p>
+        <h1 class="hero-headline">Architecture<br /><em>shaped by place</em></h1>
+        <a href="#work" class="hero-cta">View Projects <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INTRO STRIP
+    ============================================================ -->
+    <section class="intro-strip">
+      <div class="container">
+        <p class="intro-text">
+          We design buildings that belong to their site — residential, multi-family,
+          and mixed-use work distinguished by materiality, light, and enduring form.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WORK / PROJECTS
+    ============================================================ -->
+    <section class="work-section" id="work">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Selected Work</h2>
+          <div class="filter-tabs" role="tablist" aria-label="Filter projects by type">
+            <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="residential">Residential</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="multi-family">Multi-Family</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="mixed-use">Mixed-Use</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="hospitality">Hospitality</button>
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <article class="project-card" data-category="residential">
+            <a href="#" class="project-link" aria-label="View Highland Park Residence project">
+              <div class="project-img-wrap">
+                <img src="https://picsum.photos/seed/fas-p1/900/700" alt="Highland Park Residence exterior" loading="lazy" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Single Family</span>
+                <h3 class="project-title">Highland Park Residence</h3>
+                <span class="project-year">2024</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card project-card--wide" data-category="multi-family">
+            <a href="#" class="project-link" aria-label="View Silver Lake Multi-Family project">
+              <div class="project-img-wrap">
+                <img src="https://picsum.photos/seed/fas-p2/1200/700" alt="Silver Lake multi-family building" loading="lazy" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Multi-Family</span>
+                <h3 class="project-title">Silver Lake Apartments</h3>
+                <span class="project-year">2023</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="mixed-use">
+            <a href="#" class="project-link" aria-label="View Culver City Live-Work project">
+              <div class="project-img-wrap">
+                <img src="https://picsum.photos/seed/fas-p3/900/700" alt="Culver City mixed-use development" loading="lazy" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Mixed-Use</span>
+                <h3 class="project-title">Culver City Live-Work</h3>
+                <span class="project-year">2023</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="residential">
+            <a href="#" class="project-link" aria-label="View Los Feliz Guest House project">
+              <div class="project-img-wrap">
+                <img src="https://picsum.photos/seed/fas-p4/900/700" alt="Los Feliz guest house" loading="lazy" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Single Family</span>
+                <h3 class="project-title">Los Feliz Guest House</h3>
+                <span class="project-year">2022</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card project-card--tall" data-category="hospitality">
+            <a href="#" class="project-link" aria-label="View Echo Park Boutique Hotel project">
+              <div class="project-img-wrap">
+                <img src="https://picsum.photos/seed/fas-p5/900/1100" alt="Echo Park boutique hotel" loading="lazy" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Hospitality</span>
+                <h3 class="project-title">Echo Park Boutique Hotel</h3>
+                <span class="project-year">2022</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="multi-family">
+            <a href="#" class="project-link" aria-label="View Los Feliz Townhomes project">
+              <div class="project-img-wrap">
+                <img src="https://picsum.photos/seed/fas-p6/900/700" alt="Los Feliz townhomes" loading="lazy" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Multi-Family</span>
+                <h3 class="project-title">Los Feliz Townhomes</h3>
+                <span class="project-year">2021</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card project-card--wide" data-category="mixed-use">
+            <a href="#" class="project-link" aria-label="View Silverlake Mixed-Use project">
+              <div class="project-img-wrap">
+                <img src="https://picsum.photos/seed/fas-p7/1200/700" alt="Silverlake mixed-use building" loading="lazy" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Mixed-Use</span>
+                <h3 class="project-title">Silverlake Mixed-Use</h3>
+                <span class="project-year">2021</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="residential">
+            <a href="#" class="project-link" aria-label="View Santa Monica Penthouse project">
+              <div class="project-img-wrap">
+                <img src="https://picsum.photos/seed/fas-p8/900/700" alt="Santa Monica penthouse interior" loading="lazy" />
+              </div>
+              <div class="project-info">
+                <span class="project-category">Single Family</span>
+                <h3 class="project-title">Santa Monica Penthouse</h3>
+                <span class="project-year">2020</span>
+              </div>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURED PROJECT (full-bleed callout)
+    ============================================================ -->
+    <section class="featured-project">
+      <div class="featured-media">
+        <img
+          src="https://picsum.photos/seed/fas-featured/1920/900"
+          alt="Beverly Hills Residence — featured project"
+          loading="lazy"
+        />
+        <div class="featured-overlay"></div>
+      </div>
+      <div class="featured-content container">
+        <div class="featured-meta">
+          <span class="featured-label">Featured Project</span>
+          <h2 class="featured-title">Beverly Hills<br />Residence</h2>
+          <p class="featured-desc">
+            A 6,200 sf private residence on a sloped hillside lot — organised around a central
+            courtyard that mediates between street and canyon views.
+          </p>
+          <a href="#" class="btn btn--ghost">Explore Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STUDIO / ABOUT
+    ============================================================ -->
+    <section class="studio-section" id="studio">
+      <div class="container">
+        <div class="studio-grid">
+          <div class="studio-text">
+            <h2 class="section-title">Studio</h2>
+            <p class="studio-body">
+              Ferrier Architecture Studio is a Los Angeles–based practice founded in 2010 by
+              Graham Ferrier and Keely Colcleugh. We work across residential, multi-family,
+              and mixed-use typologies — from custom single-family homes to larger urban
+              infill developments.
+            </p>
+            <p class="studio-body">
+              Our approach is rooted in an understanding of site, climate, and the life
+              a building will accommodate. We use advanced BIM and visualisation tools to
+              develop design intent early and with precision, reducing uncertainty for
+              clients and construction teams alike.
+            </p>
+            <div class="principals">
+              <div class="principal">
+                <p class="principal-name">Graham Ferrier</p>
+                <p class="principal-role">Principal, Architecture</p>
+              </div>
+              <div class="principal">
+                <p class="principal-name">Keely Colcleugh</p>
+                <p class="principal-role">Principal, Design</p>
+              </div>
+            </div>
+          </div>
+          <div class="studio-image">
+            <img
+              src="https://picsum.photos/seed/fas-studio/800/1000"
+              alt="Ferrier Architecture Studio — principals"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Recognition -->
+        <div class="recognition">
+          <div class="recognition-item">
+            <span class="recognition-number">50+</span>
+            <span class="recognition-label">Projects completed</span>
+          </div>
+          <div class="recognition-item">
+            <span class="recognition-number">14</span>
+            <span class="recognition-label">Years in practice</span>
+          </div>
+          <div class="recognition-item">
+            <span class="recognition-number">LA</span>
+            <span class="recognition-label">Based, regionally focused</span>
+          </div>
+          <div class="recognition-item">
+            <span class="recognition-number">AIA</span>
+            <span class="recognition-label">Member practice</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+    ============================================================ -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="services-grid">
+
+          <div class="service-item">
+            <span class="service-number">01</span>
+            <h3 class="service-title">Residential Design</h3>
+            <p class="service-desc">
+              Custom single-family homes, additions, and ADUs. Full-service from
+              feasibility through construction administration.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">02</span>
+            <h3 class="service-title">Multi-Family</h3>
+            <p class="service-desc">
+              Apartment buildings, townhome communities, and for-rent or for-sale
+              condominium projects at all scales.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">03</span>
+            <h3 class="service-title">Mixed-Use Development</h3>
+            <p class="service-desc">
+              Ground-floor retail and commercial podiums beneath residential
+              above — with expertise in LA's complex entitlement process.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">04</span>
+            <h3 class="service-title">Hospitality</h3>
+            <p class="service-desc">
+              Boutique hotels, short-term rentals, and restaurant environments
+              that translate brand identity into built form.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">05</span>
+            <h3 class="service-title">Feasibility &amp; Entitlement</h3>
+            <p class="service-desc">
+              Early-stage site analysis, zoning review, and entitlement strategy
+              to de-risk development decisions before design begins.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <span class="service-number">06</span>
+            <h3 class="service-title">3D Visualisation</h3>
+            <p class="service-desc">
+              Photorealistic renderings and virtual reality walkthroughs to
+              communicate design intent with clarity to clients and stakeholders.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROCESS STRIP
+    ============================================================ -->
+    <section class="process-strip">
+      <div class="container">
+        <h2 class="section-title section-title--light">How we work</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <span class="process-num">1</span>
+            <h3 class="process-label">Listen</h3>
+            <p class="process-text">We begin by understanding your goals, timeline, and the constraints of the site.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-num">2</span>
+            <h3 class="process-label">Design</h3>
+            <p class="process-text">Iterative design from concept through detailed documentation — always with clear visualisation.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-num">3</span>
+            <h3 class="process-label">Build</h3>
+            <p class="process-text">Active construction administration to ensure the design intent is delivered on-site.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="contact-intro">
+              Whether you're a homeowner planning a renovation or a developer
+              evaluating a site, we'd like to hear from you.
+            </p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <span class="detail-label">Email</span>
+                <a href="mailto:studio@ferrierarchitecture.studio" class="detail-value">
+                  studio@ferrierarchitecture.studio
+                </a>
+              </div>
+              <div class="contact-detail">
+                <span class="detail-label">Location</span>
+                <p class="detail-value">Los Angeles, California</p>
+              </div>
+              <div class="contact-detail">
+                <span class="detail-label">Instagram</span>
+                <a href="#" class="detail-value">@ferrierarchitecture</a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="project-type" class="form-label">Project Type</label>
+              <select id="project-type" name="project-type" class="form-select">
+                <option value="" disabled selected>Select type</option>
+                <option value="residential">Residential</option>
+                <option value="multi-family">Multi-Family</option>
+                <option value="mixed-use">Mixed-Use</option>
+                <option value="hospitality">Hospitality</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your project" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send Message</button>
+            <p class="form-note" id="form-note" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">FAS</span>
+        <p class="footer-tagline">Ferrier Architecture Studio</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#work">Work</a>
+        <a href="#studio">Studio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Ferrier Architecture Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
