@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Highland Park Residence — Ferrier Architecture Studio</title>
+  <meta name="description" content="A hillside residence in Highland Park, Los Angeles. Single family residential design by Ferrier Architecture Studio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,200;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Ferrier Architecture Studio — home">
+        <span class="logo-mark">FAS</span>
+        <span class="logo-full">Ferrier Architecture Studio</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="../index.html#work" class="nav-link">Work</a>
+        <a href="../index.html#studio" class="nav-link">Studio</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="../index.html#work" class="mobile-nav-link">Work</a>
+      <a href="../index.html#studio" class="mobile-nav-link">Studio</a>
+      <a href="../index.html#services" class="mobile-nav-link">Services</a>
+      <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="project-hero">
+      <img src="https://picsum.photos/seed/hp-hero/1920/1080" alt="Highland Park Residence exterior" class="project-hero-img" />
+      <div class="project-hero-overlay"></div>
+      <div class="project-hero-content">
+        <span class="project-hero-eyebrow">Single Family — 2024</span>
+        <h1 class="project-hero-title">Highland Park<br />Residence</h1>
+      </div>
+    </section>
+
+    <div class="container">
+      <a href="../index.html#work" class="project-back">← All Projects</a>
+
+      <div class="project-specs">
+        <div class="project-spec">
+          <span class="spec-label">Type</span>
+          <span class="spec-value">Single Family Residential</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Location</span>
+          <span class="spec-value">Highland Park, Los Angeles</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Area</span>
+          <span class="spec-value">3,200 sf</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Status</span>
+          <span class="spec-value">Completed 2024</span>
+        </div>
+      </div>
+
+      <div class="project-description">
+        <span class="project-description-label">Description</span>
+        <div class="project-description-text">
+          <p>A hillside residence that negotiates a steep slope through a series of offset volumes, each capturing distinct views of the San Gabriel Mountains and the city below. The plan is organised along a single north–south spine, allowing rooms to step down the site in response to topography.</p>
+          <p>Exposed board-formed concrete, raw steel, and white plaster reflect the light and materiality of Northeast Los Angeles. Deep overhangs provide passive shading while framing views as a series of composed vignettes.</p>
+        </div>
+      </div>
+
+      <div class="project-gallery">
+        <div class="project-gallery-item project-gallery-item--wide">
+          <img src="https://picsum.photos/seed/hp-g1/1600/700" alt="Highland Park Residence — exterior view" loading="lazy" />
+        </div>
+        <div class="project-gallery-item">
+          <img src="https://picsum.photos/seed/hp-g2/900/675" alt="Highland Park Residence — living area" loading="lazy" />
+        </div>
+        <div class="project-gallery-item">
+          <img src="https://picsum.photos/seed/hp-g3/900/675" alt="Highland Park Residence — staircase detail" loading="lazy" />
+        </div>
+        <div class="project-gallery-item project-gallery-item--wide">
+          <img src="https://picsum.photos/seed/hp-g4/1600/700" alt="Highland Park Residence — rear terrace" loading="lazy" />
+        </div>
+      </div>
+
+      <nav class="project-nav" aria-label="Project navigation">
+        <a href="beverly-hills-residence.html" class="project-nav-item">
+          <span class="project-nav-direction">← Previous</span>
+          <span class="project-nav-title">Beverly Hills Residence</span>
+        </a>
+        <a href="silver-lake-apartments.html" class="project-nav-item">
+          <span class="project-nav-direction">Next →</span>
+          <span class="project-nav-title">Silver Lake Apartments</span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">FAS</span>
+        <p class="footer-tagline">Ferrier Architecture Studio</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#studio">Studio</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; <span class="footer-year"></span> Ferrier Architecture Studio.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>

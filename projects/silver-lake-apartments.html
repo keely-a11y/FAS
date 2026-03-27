@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silver Lake Apartments — Ferrier Architecture Studio</title>
+  <meta name="description" content="Twelve apartment units organised around a shared courtyard in Silver Lake, Los Angeles. Multi-family design by Ferrier Architecture Studio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,200;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">FAS</span>
+        <span class="logo-full">Ferrier Architecture Studio</span>
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html#work" class="nav-link">Work</a>
+        <a href="../index.html#studio" class="nav-link">Studio</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav>
+      <a href="../index.html#work" class="mobile-nav-link">Work</a>
+      <a href="../index.html#studio" class="mobile-nav-link">Studio</a>
+      <a href="../index.html#services" class="mobile-nav-link">Services</a>
+      <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="project-hero">
+      <img src="https://picsum.photos/seed/sl-hero/1920/1080" alt="Silver Lake Apartments exterior" class="project-hero-img" />
+      <div class="project-hero-overlay"></div>
+      <div class="project-hero-content">
+        <span class="project-hero-eyebrow">Multi-Family — 2023</span>
+        <h1 class="project-hero-title">Silver Lake<br />Apartments</h1>
+      </div>
+    </section>
+
+    <div class="container">
+      <a href="../index.html#work" class="project-back">← All Projects</a>
+
+      <div class="project-specs">
+        <div class="project-spec">
+          <span class="spec-label">Type</span>
+          <span class="spec-value">Multi-Family Residential</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Location</span>
+          <span class="spec-value">Silver Lake, Los Angeles</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Units</span>
+          <span class="spec-value">12 Apartments</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Status</span>
+          <span class="spec-value">Completed 2023</span>
+        </div>
+      </div>
+
+      <div class="project-description">
+        <span class="project-description-label">Description</span>
+        <div class="project-description-text">
+          <p>Twelve apartment units organised around a shared courtyard, providing passive cooling and a communal threshold between street and dwelling in a dense urban neighbourhood.</p>
+          <p>The building is arranged in two parallel bars connected by an open breezeway. Unit plans are deep and narrow, with cross-ventilation enabled by operable glazing at front and rear. Shared laundry, bike storage, and landscaped seating occupy the ground level courtyard.</p>
+        </div>
+      </div>
+
+      <div class="project-gallery">
+        <div class="project-gallery-item project-gallery-item--wide">
+          <img src="https://picsum.photos/seed/sl-g1/1600/700" alt="Silver Lake Apartments — street elevation" loading="lazy" />
+        </div>
+        <div class="project-gallery-item">
+          <img src="https://picsum.photos/seed/sl-g2/900/675" alt="Silver Lake Apartments — courtyard" loading="lazy" />
+        </div>
+        <div class="project-gallery-item">
+          <img src="https://picsum.photos/seed/sl-g3/900/675" alt="Silver Lake Apartments — unit interior" loading="lazy" />
+        </div>
+        <div class="project-gallery-item project-gallery-item--wide">
+          <img src="https://picsum.photos/seed/sl-g4/1600/700" alt="Silver Lake Apartments — breezeway" loading="lazy" />
+        </div>
+      </div>
+
+      <nav class="project-nav" aria-label="Project navigation">
+        <a href="highland-park-residence.html" class="project-nav-item">
+          <span class="project-nav-direction">← Previous</span>
+          <span class="project-nav-title">Highland Park Residence</span>
+        </a>
+        <a href="culver-city-live-work.html" class="project-nav-item">
+          <span class="project-nav-direction">Next →</span>
+          <span class="project-nav-title">Culver City Live-Work</span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">FAS</span>
+        <p class="footer-tagline">Ferrier Architecture Studio</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#studio">Studio</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; <span class="footer-year"></span> Ferrier Architecture Studio.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>

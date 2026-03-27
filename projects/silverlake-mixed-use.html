@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silverlake Mixed-Use — Ferrier Architecture Studio</title>
+  <meta name="description" content="Street-level café and retail beneath four apartments in Silver Lake. Mixed-use design by Ferrier Architecture Studio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,200;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">FAS</span>
+        <span class="logo-full">Ferrier Architecture Studio</span>
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html#work" class="nav-link">Work</a>
+        <a href="../index.html#studio" class="nav-link">Studio</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav>
+      <a href="../index.html#work" class="mobile-nav-link">Work</a>
+      <a href="../index.html#studio" class="mobile-nav-link">Studio</a>
+      <a href="../index.html#services" class="mobile-nav-link">Services</a>
+      <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="project-hero">
+      <img src="https://picsum.photos/seed/smu-hero/1920/1080" alt="Silverlake Mixed-Use building exterior" class="project-hero-img" />
+      <div class="project-hero-overlay"></div>
+      <div class="project-hero-content">
+        <span class="project-hero-eyebrow">Mixed-Use — 2021</span>
+        <h1 class="project-hero-title">Silverlake<br />Mixed-Use</h1>
+      </div>
+    </section>
+
+    <div class="container">
+      <a href="../index.html#work" class="project-back">← All Projects</a>
+
+      <div class="project-specs">
+        <div class="project-spec">
+          <span class="spec-label">Type</span>
+          <span class="spec-value">Mixed-Use</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Location</span>
+          <span class="spec-value">Silver Lake, Los Angeles</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Area</span>
+          <span class="spec-value">6,200 sf</span>
+        </div>
+        <div class="project-spec">
+          <span class="spec-label">Status</span>
+          <span class="spec-value">Completed 2021</span>
+        </div>
+      </div>
+
+      <div class="project-description">
+        <span class="project-description-label">Description</span>
+        <div class="project-description-text">
+          <p>Street-level café and retail beneath four apartments — a model for gentle densification in an established neighbourhood. The commercial tenancies are designed as a single flexible space that can be subdivided, with folding glazed facades that open fully to the sidewalk in warm weather.</p>
+          <p>The four apartments above each have distinct layouts responding to orientation — northern units are deeper with skylights, southern units have narrower plans with full-height south-facing glazing and external louvres for solar control.</p>
+        </div>
+      </div>
+
+      <div class="project-gallery">
+        <div class="project-gallery-item project-gallery-item--wide">
+          <img src="https://picsum.photos/seed/smu-g1/1600/700" alt="Silverlake Mixed-Use — street elevation" loading="lazy" />
+        </div>
+        <div class="project-gallery-item">
+          <img src="https://picsum.photos/seed/smu-g2/900/675" alt="Silverlake Mixed-Use — café interior" loading="lazy" />
+        </div>
+        <div class="project-gallery-item">
+          <img src="https://picsum.photos/seed/smu-g3/900/675" alt="Silverlake Mixed-Use — apartment living" loading="lazy" />
+        </div>
+        <div class="project-gallery-item project-gallery-item--wide">
+          <img src="https://picsum.photos/seed/smu-g4/1600/700" alt="Silverlake Mixed-Use — evening view" loading="lazy" />
+        </div>
+      </div>
+
+      <nav class="project-nav" aria-label="Project navigation">
+        <a href="los-feliz-townhomes.html" class="project-nav-item">
+          <span class="project-nav-direction">← Previous</span>
+          <span class="project-nav-title">Los Feliz Townhomes</span>
+        </a>
+        <a href="santa-monica-penthouse.html" class="project-nav-item">
+          <span class="project-nav-direction">Next →</span>
+          <span class="project-nav-title">Santa Monica Penthouse</span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">FAS</span>
+        <p class="footer-tagline">Ferrier Architecture Studio</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#studio">Studio</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; <span class="footer-year"></span> Ferrier Architecture Studio.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>
