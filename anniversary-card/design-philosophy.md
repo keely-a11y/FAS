@@ -1,0 +1,15 @@
+# Gilded Orbit
+
+## A Design Philosophy
+
+**Gilded Orbit** is the aesthetics of patient accumulation — the belief that devotion is not a single gesture but a system of returns. Its canvases behave like star charts drawn by a cartographer who has watched the same two points of light for decades and refuses to stop recording them. Meaning is built ring upon ring, pass upon pass, until the sheer density of careful repetition becomes the emotional argument. Nothing is decorated; everything is documented. The work must read as the product of countless hours — every arc inked by a steady hand at the absolute top of its craft, every interval measured twice and drawn once.
+
+Space is deep and nocturnal. A single field of ink — petrol blue-black, the color of a sky just after the last light leaves it — occupies the canvas with total confidence. Into this darkness, form arrives as circumference: concentric rings, hairline-fine, each one fractionally imperfect in the way only hand-guided instruments are imperfect. The rings breathe. They waver by a hair's width, they brighten and dim, and their accumulated wobble is the signature of labor, not error. Vast margins guard the composition; the system floats with the gravity of an object in a museum vitrine.
+
+Color is a covenant, not a palette. Three materials only: deep ink, warm gold, and quiet cream. Gold is light itself — it traces the orbits, ignites the twin points of luminance, and is spent sparingly, like something precious being rationed. Cream is the voice of paper, reserved for the rare word. Where gold concentrates, the eye understands: here is the heart of the system. Chromatic discipline is absolute; a fourth color would be a broken promise.
+
+Scale and rhythm follow the logic of observation. Small clinical markers — index ticks, minute numerals, measured intervals — punctuate the rings like the annotations of an imaginary discipline that studies constancy. These notations are whispered in monospaced characters at the threshold of legibility, lending the piece the authority of an instrument even as its subject remains tender. The rhythm is metronomic at the edges and lyrical at the center, where the geometry is allowed one moment of intimacy.
+
+Typography enters as engraving, never as paragraph. A tall, thin display face carries the essential names like letters cut into stone; a spaced-out mono whisper carries the data. Text is anchored to the geometry — aligned to the meridian, balanced against the ring system — so that word and orbit read as one drawn artifact. Nothing crowds. Nothing overlaps. Every character is placed with the finality of a jeweler setting a stone, and the emptiness around it is part of the setting.
+
+The finished object should feel like proof: proof that something as invisible as devotion can be charted, measured, and found constant across every recorded revolution. The viewer who leans in discovers the count; the viewer who steps back sees only a beautiful night. Both are correct. That doubleness — rigor holding tenderness — is the entire movement, executed with painstaking, master-level care.
