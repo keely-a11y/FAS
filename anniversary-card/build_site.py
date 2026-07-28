@@ -18,7 +18,7 @@ if photo_b64:
         <div class="frame-outer"><div class="frame-inner">
           <img src="data:{photo_mime};base64,{photo_b64}" alt="Rob and Rae Lee together on a rooftop in Barcelona, the city skyline behind them">
         </div></div>
-        <figcaption class="mono-label">SIDE&nbsp;BY&nbsp;SIDE&nbsp;&nbsp;&middot;&nbsp;&nbsp;EVERY&nbsp;HORIZON</figcaption>
+        <figcaption class="mono-label">ROB&nbsp;&amp;&nbsp;RAE&nbsp;LEE&nbsp;&nbsp;&middot;&nbsp;&nbsp;EST.&nbsp;2002</figcaption>
       </figure>'''
 else:
     photo_block = '''<figure class="photo-frame reveal">
@@ -28,7 +28,7 @@ else:
             <circle cx="114" cy="70" r="34" fill="none" stroke="#e6c87f" stroke-width="1.4"/>
           </svg>
         </div></div>
-        <figcaption class="mono-label">SIDE&nbsp;BY&nbsp;SIDE&nbsp;&nbsp;&middot;&nbsp;&nbsp;EVERY&nbsp;HORIZON</figcaption>
+        <figcaption class="mono-label">ROB&nbsp;&amp;&nbsp;RAE&nbsp;LEE&nbsp;&nbsp;&middot;&nbsp;&nbsp;EST.&nbsp;2002</figcaption>
       </figure>'''
 
 html = r'''<title>Rob & Rae Lee — Twenty-Four Years</title>
@@ -147,8 +147,8 @@ section{position:relative}
   <section class="photo-sec">
     <div class="shell">
       __PHOTO__
-      <p class="photo-lede reveal" style="--d:.25s">Twenty-four years of orbit together&nbsp;&mdash;
-        and every skyline still looks better with you two in front of&nbsp;it.</p>
+      <p class="photo-lede reveal" style="--d:.25s">Twenty-four years in,
+        and still a great team&nbsp;&mdash; wherever you&nbsp;go.</p>
     </div>
   </section>
 
@@ -159,12 +159,12 @@ section{position:relative}
       </span>
       <div class="mono-label reveal" style="--d:.1s">XXIV</div>
       <h2 class="salutation reveal" style="--d:.2s">Rob &amp; Rae&nbsp;Lee,</h2>
-      <p class="reveal" style="--d:.3s">Twenty-four years ago we watched you promise each other
-        forever&nbsp;&mdash; and every year since, you have shown us what forever looks&nbsp;like.</p>
-      <p class="reveal" style="--d:.4s">Two lives moving through the world side by side,
-        still laughing, still shining, still choosing each&nbsp;other.</p>
-      <p class="reveal" style="--d:.5s">We are so proud of the life you have built,
-        and we love you both beyond&nbsp;measure.</p>
+      <p class="reveal" style="--d:.3s">Twenty-four years of marriage is a real accomplishment,
+        and you've made every one of them&nbsp;count.</p>
+      <p class="reveal" style="--d:.4s">You two make a great team. You work hard, you look out
+        for each other, and you've built a life and a family to be proud&nbsp;of.</p>
+      <p class="reveal" style="--d:.5s">We're very proud of you both,
+        and we love you very&nbsp;much.</p>
     </div>
   </section>
 
