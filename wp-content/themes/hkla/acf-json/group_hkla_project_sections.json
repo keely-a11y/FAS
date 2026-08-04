@@ -1,0 +1,251 @@
+{
+    "key": "group_hkla_project_sections",
+    "title": "Project: Story sections",
+    "fields": [
+        {
+            "key": "field_hkla_project_sections",
+            "label": "Story sections",
+            "name": "project_sections",
+            "type": "flexible_content",
+            "instructions": "Build the narrative in order. Alternate text with imagery; use a sketch spotlight where a drawing tells the story best.",
+            "button_label": "Add section",
+            "layouts": {
+                "layout_hkla_sec_text": {
+                    "key": "layout_hkla_sec_text",
+                    "name": "text",
+                    "label": "Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hkla_sec_text_heading",
+                            "label": "Heading (optional)",
+                            "name": "heading",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_hkla_sec_text_body",
+                            "label": "Body",
+                            "name": "body",
+                            "type": "wysiwyg",
+                            "required": 1,
+                            "tabs": "visual",
+                            "toolbar": "hkla_minimal",
+                            "media_upload": 0
+                        }
+                    ]
+                },
+                "layout_hkla_sec_full_image": {
+                    "key": "layout_hkla_sec_full_image",
+                    "name": "full_image",
+                    "label": "Full-bleed image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hkla_sec_full_image_image",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "Minimum width 1600px.",
+                            "required": 1,
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "min_width": 1600
+                        },
+                        {
+                            "key": "field_hkla_sec_full_image_caption",
+                            "label": "Caption",
+                            "name": "caption",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "layout_hkla_sec_image_pair": {
+                    "key": "layout_hkla_sec_image_pair",
+                    "name": "image_pair",
+                    "label": "Image pair",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hkla_sec_image_pair_a",
+                            "label": "Image A",
+                            "name": "image_a",
+                            "type": "image",
+                            "required": 1,
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "min_width": 1600
+                        },
+                        {
+                            "key": "field_hkla_sec_image_pair_b",
+                            "label": "Image B",
+                            "name": "image_b",
+                            "type": "image",
+                            "required": 1,
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "min_width": 1600
+                        },
+                        {
+                            "key": "field_hkla_sec_image_pair_caption",
+                            "label": "Caption",
+                            "name": "caption",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "layout_hkla_sec_gallery": {
+                    "key": "layout_hkla_sec_gallery",
+                    "name": "gallery",
+                    "label": "Gallery",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hkla_sec_gallery_images",
+                            "label": "Images",
+                            "name": "images",
+                            "type": "gallery",
+                            "instructions": "Minimum width 1600px each.",
+                            "required": 1,
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "min_width": 1600
+                        }
+                    ]
+                },
+                "layout_hkla_sec_sketch": {
+                    "key": "layout_hkla_sec_sketch",
+                    "name": "sketch",
+                    "label": "Sketch spotlight",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hkla_sec_sketch_image",
+                            "label": "Sketch",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "A hand drawing. Shown on a white ground with generous margins and the drawn-line reveal.",
+                            "required": 1,
+                            "return_format": "array",
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_hkla_sec_sketch_caption",
+                            "label": "Caption",
+                            "name": "caption",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "layout_hkla_sec_voice": {
+                    "key": "layout_hkla_sec_voice",
+                    "name": "voice",
+                    "label": "Voice (quote)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hkla_sec_voice_quote",
+                            "label": "Quote",
+                            "name": "quote",
+                            "type": "textarea",
+                            "required": 1,
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_hkla_sec_voice_name",
+                            "label": "Name",
+                            "name": "name",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_hkla_sec_voice_role",
+                            "label": "Role",
+                            "name": "role",
+                            "type": "text",
+                            "instructions": "Example: Principal, LAUSD, or Long Beach resident"
+                        }
+                    ]
+                },
+                "layout_hkla_sec_stats": {
+                    "key": "layout_hkla_sec_stats",
+                    "name": "stats",
+                    "label": "Stats",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hkla_sec_stats_stats",
+                            "label": "Stats",
+                            "name": "stats",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Add stat",
+                            "sub_fields": [
+                                {
+                                    "key": "field_hkla_sec_stats_value",
+                                    "label": "Value",
+                                    "name": "value",
+                                    "type": "text",
+                                    "required": 1
+                                },
+                                {
+                                    "key": "field_hkla_sec_stats_label",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "type": "text",
+                                    "required": 1
+                                },
+                                {
+                                    "key": "field_hkla_sec_stats_note",
+                                    "label": "Note",
+                                    "name": "note",
+                                    "type": "text"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "layout_hkla_sec_video": {
+                    "key": "layout_hkla_sec_video",
+                    "name": "video",
+                    "label": "Video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hkla_sec_video_url",
+                            "label": "Video URL",
+                            "name": "video_url",
+                            "type": "url",
+                            "instructions": "Self-hosted MP4 or Vimeo link.",
+                            "required": 1
+                        },
+                        {
+                            "key": "field_hkla_sec_video_poster",
+                            "label": "Poster image",
+                            "name": "poster",
+                            "type": "image",
+                            "instructions": "Required for performance: shown before the video loads.",
+                            "required": 1,
+                            "return_format": "array",
+                            "preview_size": "medium"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

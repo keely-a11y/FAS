@@ -1,0 +1,29 @@
+{
+    "key": "group_hkla_page_contact",
+    "title": "Contact page",
+    "fields": [
+        {
+            "key": "field_hkla_contact_statement",
+            "label": "Senior-access statement",
+            "name": "statement",
+            "type": "text",
+            "default_value": "Every client works directly with our senior team."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-contact.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

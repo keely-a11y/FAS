@@ -1,0 +1,157 @@
+{
+    "key": "group_hkla_home",
+    "title": "Home page",
+    "fields": [
+        {
+            "key": "field_hkla_home_hero_image",
+            "label": "Hero image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "Minimum width 2400px. A featured project photograph.",
+            "required": 1,
+            "return_format": "array",
+            "preview_size": "medium",
+            "min_width": 2400
+        },
+        {
+            "key": "field_hkla_home_hero_video",
+            "label": "Hero video (optional)",
+            "name": "hero_video",
+            "type": "url",
+            "instructions": "Optional self-hosted MP4. The hero image becomes the poster."
+        },
+        {
+            "key": "field_hkla_home_hero_line",
+            "label": "Hero line",
+            "name": "hero_line",
+            "type": "text",
+            "default_value": "Shared spaces. Shared stories."
+        },
+        {
+            "key": "field_hkla_home_mission",
+            "label": "Mission statement",
+            "name": "mission_statement",
+            "type": "textarea",
+            "rows": 4,
+            "default_value": "HKLA is a civic landscape specialist. Grounded in storytelling and a commitment to community, we shape environments for a shared and sustainable future."
+        },
+        {
+            "key": "field_hkla_home_featured",
+            "label": "Featured projects",
+            "name": "featured_projects",
+            "type": "relationship",
+            "instructions": "Choose 3 or 4 projects for the front page.",
+            "post_type": ["project"],
+            "filters": ["search", "taxonomy"],
+            "min": 3,
+            "max": 4,
+            "return_format": "object"
+        },
+        {
+            "key": "field_hkla_home_process_sketch",
+            "label": "Process teaser: sketch",
+            "name": "process_sketch",
+            "type": "image",
+            "instructions": "A hand sketch. Pair it with a photo of the same place.",
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_hkla_home_process_photo",
+            "label": "Process teaser: photo",
+            "name": "process_photo",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_hkla_home_process_caption",
+            "label": "Process teaser: caption",
+            "name": "process_caption",
+            "type": "text"
+        },
+        {
+            "key": "field_hkla_home_quote_text",
+            "label": "Quote",
+            "name": "quote_text",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_hkla_home_quote_name",
+            "label": "Quote: name",
+            "name": "quote_name",
+            "type": "text"
+        },
+        {
+            "key": "field_hkla_home_quote_role",
+            "label": "Quote: role",
+            "name": "quote_role",
+            "type": "text"
+        },
+        {
+            "key": "field_hkla_home_stats",
+            "label": "Purpose stat band",
+            "name": "stats",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add stat",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_home_stat_value",
+                    "label": "Value",
+                    "name": "value",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hkla_home_stat_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "required": 1
+                }
+            ]
+        },
+        {
+            "key": "field_hkla_home_recognition",
+            "label": "Recognition strip",
+            "name": "recognition",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add award name",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_home_recognition_name",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "required": 1
+                }
+            ]
+        },
+        {
+            "key": "field_hkla_home_contact_invitation",
+            "label": "Contact invitation",
+            "name": "contact_invitation",
+            "type": "text",
+            "default_value": "Every client works directly with our senior team."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

@@ -1,0 +1,56 @@
+{
+    "key": "group_hkla_project_facts",
+    "title": "Project: Facts",
+    "fields": [
+        {
+            "key": "field_hkla_client",
+            "label": "Client",
+            "name": "client",
+            "type": "text"
+        },
+        {
+            "key": "field_hkla_location",
+            "label": "Location",
+            "name": "location",
+            "type": "text",
+            "instructions": "Example: Koreatown, Los Angeles"
+        },
+        {
+            "key": "field_hkla_size",
+            "label": "Size",
+            "name": "size",
+            "type": "text",
+            "instructions": "Example: 4.2 acres"
+        },
+        {
+            "key": "field_hkla_completion",
+            "label": "Completion",
+            "name": "completion",
+            "type": "text",
+            "instructions": "Example: 2025, or In progress"
+        },
+        {
+            "key": "field_hkla_services",
+            "label": "Services",
+            "name": "services",
+            "type": "text",
+            "instructions": "Example: Landscape architecture, community engagement, planting design"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

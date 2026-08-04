@@ -1,0 +1,46 @@
+{
+    "key": "group_hkla_page_careers",
+    "title": "Careers page",
+    "fields": [
+        {
+            "key": "field_hkla_careers_culture",
+            "label": "Culture statement",
+            "name": "culture_statement",
+            "type": "text",
+            "default_value": "Do the best work of your career on places everyone can use."
+        },
+        {
+            "key": "field_hkla_careers_studio_images",
+            "label": "Studio imagery",
+            "name": "studio_images",
+            "type": "gallery",
+            "instructions": "Minimum width 1600px each.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "min_width": 1600
+        },
+        {
+            "key": "field_hkla_careers_speculative",
+            "label": "Speculative application text",
+            "name": "speculative_text",
+            "type": "text",
+            "default_value": "If you believe public space is worth a career, introduce yourself."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-careers.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

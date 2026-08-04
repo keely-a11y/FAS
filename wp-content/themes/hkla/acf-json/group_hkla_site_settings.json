@@ -1,0 +1,140 @@
+{
+    "key": "group_hkla_site_settings",
+    "title": "Site Settings",
+    "fields": [
+        {
+            "key": "field_hkla_set_address",
+            "label": "Address",
+            "name": "address",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "714 West Olympic Blvd, Suite 735\nLos Angeles, CA 90015"
+        },
+        {
+            "key": "field_hkla_set_phone",
+            "label": "Phone",
+            "name": "phone",
+            "type": "text"
+        },
+        {
+            "key": "field_hkla_set_email",
+            "label": "Email",
+            "name": "email",
+            "type": "email"
+        },
+        {
+            "key": "field_hkla_set_rfp_email",
+            "label": "RFP email",
+            "name": "rfp_email",
+            "type": "email",
+            "instructions": "RFP inquiries from the contact form go here. Left empty, they go to the main email."
+        },
+        {
+            "key": "field_hkla_set_instagram",
+            "label": "Instagram URL",
+            "name": "instagram_url",
+            "type": "url"
+        },
+        {
+            "key": "field_hkla_set_linkedin",
+            "label": "LinkedIn URL",
+            "name": "linkedin_url",
+            "type": "url"
+        },
+        {
+            "key": "field_hkla_set_footer_line",
+            "label": "Footer line",
+            "name": "footer_line",
+            "type": "text",
+            "default_value": "Shared spaces. Shared stories."
+        },
+        {
+            "key": "field_hkla_set_careers_intro",
+            "label": "Careers intro",
+            "name": "careers_intro",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "hkla_minimal",
+            "media_upload": 0
+        },
+        {
+            "key": "field_hkla_set_open_roles",
+            "label": "Open roles",
+            "name": "open_roles",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add role",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_role_title",
+                    "label": "Role title",
+                    "name": "role_title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hkla_role_type",
+                    "label": "Type",
+                    "name": "role_type",
+                    "type": "text",
+                    "instructions": "Example: Full time"
+                },
+                {
+                    "key": "field_hkla_role_location",
+                    "label": "Location",
+                    "name": "role_location",
+                    "type": "text",
+                    "instructions": "Example: Los Angeles"
+                },
+                {
+                    "key": "field_hkla_role_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "wysiwyg",
+                    "tabs": "visual",
+                    "toolbar": "hkla_minimal",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_hkla_role_apply_link",
+                    "label": "Apply link",
+                    "name": "apply_link",
+                    "type": "url",
+                    "instructions": "A mailto: link or application URL."
+                }
+            ]
+        },
+        {
+            "key": "field_hkla_set_og_image",
+            "label": "Default social share image",
+            "name": "default_og_image",
+            "type": "image",
+            "instructions": "Used when a page has no image of its own. 1200 by 630px works best.",
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_hkla_set_form_shortcode",
+            "label": "Contact form shortcode",
+            "name": "contact_form_shortcode",
+            "type": "text",
+            "instructions": "Optional, admin use. A WPForms or Gravity Forms shortcode to replace the built-in contact form."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "hkla-site-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

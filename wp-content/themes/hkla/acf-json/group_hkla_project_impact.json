@@ -1,0 +1,54 @@
+{
+    "key": "group_hkla_project_impact",
+    "title": "Project: Impact",
+    "fields": [
+        {
+            "key": "field_hkla_impact_summary",
+            "label": "Impact summary",
+            "name": "impact_summary",
+            "type": "textarea",
+            "instructions": "One or two sentences on what this place does for its community.",
+            "rows": 3
+        },
+        {
+            "key": "field_hkla_impact_metrics",
+            "label": "Impact metrics",
+            "name": "impact_metrics",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add metric",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_impact_metric_value",
+                    "label": "Value",
+                    "name": "value",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hkla_impact_metric_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "required": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

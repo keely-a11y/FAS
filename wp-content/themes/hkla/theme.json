@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": false,
+    "color": {
+      "custom": false,
+      "customGradient": false,
+      "customDuotone": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false,
+      "gradients": [],
+      "duotone": [],
+      "palette": [
+        { "slug": "ink", "name": "Ink", "color": "#000000" },
+        { "slug": "paper", "name": "Paper", "color": "#EFEBE8" },
+        { "slug": "stone", "name": "Stone", "color": "#978E7D" },
+        { "slug": "signal", "name": "Signal", "color": "#C9E35B" },
+        { "slug": "white", "name": "White", "color": "#FFFFFF" }
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "dropCap": false,
+      "fontStyle": false,
+      "fontWeight": false,
+      "letterSpacing": false,
+      "lineHeight": false,
+      "textDecoration": false,
+      "textTransform": false,
+      "fontFamilies": [
+        {
+          "slug": "sans",
+          "name": "HKLA Sans",
+          "fontFamily": "\"JL Jungka\", \"Neue Haas Grotesk\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "small", "name": "Small", "size": "0.875rem" },
+        { "slug": "medium", "name": "Body", "size": "1.0625rem" },
+        { "slug": "large", "name": "Large", "size": "1.375rem" }
+      ]
+    },
+    "spacing": {
+      "customSpacingSize": false,
+      "units": []
+    },
+    "layout": {
+      "contentSize": "65ch",
+      "wideSize": "1200px"
+    },
+    "border": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": []
+    }
+  }
+}

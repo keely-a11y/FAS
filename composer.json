@@ -1,0 +1,25 @@
+{
+  "name": "kilograph/hkla-wordpress",
+  "description": "HKLA custom WordPress theme and documented plugin set. ACF Pro requires a license key; add your auth token for connect.advancedcustomfields.com or install it manually.",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": ["wpackagist-plugin/*"]
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "wpackagist-plugin/safe-svg": "^2.2",
+    "wpackagist-plugin/wpforms-lite": "^1.8",
+    "wpackagist-plugin/redirection": "^5.4",
+    "wpackagist-plugin/wp-seopress": "^8.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
+    },
+    "note": "ACF Pro is commercial and not on wpackagist. Install via https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer/ or upload the zip."
+  }
+}

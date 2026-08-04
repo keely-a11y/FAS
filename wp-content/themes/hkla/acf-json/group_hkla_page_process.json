@@ -1,0 +1,108 @@
+{
+    "key": "group_hkla_page_process",
+    "title": "Process page",
+    "fields": [
+        {
+            "key": "field_hkla_process_framing",
+            "label": "Framing statement",
+            "name": "framing_statement",
+            "type": "text",
+            "default_value": "Before a line is drawn, we find the story."
+        },
+        {
+            "key": "field_hkla_process_stages",
+            "label": "Stages",
+            "name": "stages",
+            "type": "repeater",
+            "instructions": "The four stages: Listen, Find the story, Draw by hand, Build together.",
+            "layout": "block",
+            "min": 4,
+            "max": 4,
+            "button_label": "Add stage",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_stage_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hkla_stage_statement",
+                    "label": "Short statement",
+                    "name": "statement",
+                    "type": "text"
+                },
+                {
+                    "key": "field_hkla_stage_body",
+                    "label": "Paragraph",
+                    "name": "body",
+                    "type": "wysiwyg",
+                    "tabs": "visual",
+                    "toolbar": "hkla_minimal",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_hkla_stage_image",
+                    "label": "Artifact image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Site notes, a sketch, a model, a build photo.",
+                    "return_format": "array",
+                    "preview_size": "medium"
+                }
+            ]
+        },
+        {
+            "key": "field_hkla_process_partners_heading",
+            "label": "Partners: heading",
+            "name": "partners_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_hkla_process_partners_body",
+            "label": "Partners: body",
+            "name": "partners_body",
+            "type": "wysiwyg",
+            "instructions": "Addressed to architecture-firm partners.",
+            "tabs": "visual",
+            "toolbar": "hkla_minimal",
+            "media_upload": 0
+        },
+        {
+            "key": "field_hkla_process_partner_quote",
+            "label": "Partner quote",
+            "name": "partner_quote",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_hkla_process_partner_quote_name",
+            "label": "Partner quote: name",
+            "name": "partner_quote_name",
+            "type": "text"
+        },
+        {
+            "key": "field_hkla_process_partner_quote_role",
+            "label": "Partner quote: role",
+            "name": "partner_quote_role",
+            "type": "text"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-process.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

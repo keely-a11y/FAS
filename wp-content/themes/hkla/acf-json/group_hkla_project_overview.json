@@ -1,0 +1,61 @@
+{
+    "key": "group_hkla_project_overview",
+    "title": "Project: Overview",
+    "fields": [
+        {
+            "key": "field_hkla_story_headline",
+            "label": "Story headline",
+            "name": "story_headline",
+            "type": "text",
+            "instructions": "The one-line story of this place. Under 10 words, no jargon. Example: Where others saw problems, we saw potential.",
+            "required": 1,
+            "maxlength": 90
+        },
+        {
+            "key": "field_hkla_story_intro",
+            "label": "Story intro",
+            "name": "story_intro",
+            "type": "wysiwyg",
+            "instructions": "2 to 3 short paragraphs that open the narrative. Plain, confident sentences.",
+            "required": 1,
+            "tabs": "visual",
+            "toolbar": "hkla_minimal",
+            "media_upload": 0
+        },
+        {
+            "key": "field_hkla_hero_image",
+            "label": "Hero image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "Required. Minimum width 2400px. This is the full-bleed opening image; choose the strongest photograph of the finished place.",
+            "required": 1,
+            "return_format": "array",
+            "preview_size": "medium",
+            "min_width": 2400,
+            "mime_types": "jpg,jpeg,png,webp,avif"
+        },
+        {
+            "key": "field_hkla_hero_video",
+            "label": "Hero video (optional)",
+            "name": "hero_video",
+            "type": "url",
+            "instructions": "Optional. A self-hosted MP4 URL or Vimeo link. The hero image is used as the poster."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

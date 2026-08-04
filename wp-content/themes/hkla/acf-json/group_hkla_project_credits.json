@@ -1,0 +1,85 @@
+{
+    "key": "group_hkla_project_credits",
+    "title": "Project: Credits",
+    "fields": [
+        {
+            "key": "field_hkla_collaborators",
+            "label": "Collaborators",
+            "name": "collaborators",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add collaborator",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_collaborator_name",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hkla_collaborator_role",
+                    "label": "Role",
+                    "name": "role",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_hkla_awards",
+            "label": "Awards",
+            "name": "awards",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add award",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_award_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hkla_award_organization",
+                    "label": "Organization",
+                    "name": "organization",
+                    "type": "text"
+                },
+                {
+                    "key": "field_hkla_award_year",
+                    "label": "Year",
+                    "name": "year",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_hkla_related_projects",
+            "label": "Next project (optional)",
+            "name": "related_projects",
+            "type": "relationship",
+            "instructions": "Optional. Choose what appears as the next project. Left empty, the site shows the latest project in the same sector.",
+            "post_type": ["project"],
+            "filters": ["search", "taxonomy"],
+            "max": 1,
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

@@ -1,0 +1,66 @@
+{
+    "key": "group_hkla_person",
+    "title": "Person",
+    "fields": [
+        {
+            "key": "field_hkla_person_role_title",
+            "label": "Role title",
+            "name": "role_title",
+            "type": "text",
+            "instructions": "Example: Senior Landscape Architect",
+            "required": 1
+        },
+        {
+            "key": "field_hkla_person_credentials",
+            "label": "Credentials",
+            "name": "credentials",
+            "type": "text",
+            "instructions": "Example: PLA, ASLA"
+        },
+        {
+            "key": "field_hkla_person_bio",
+            "label": "Bio",
+            "name": "bio",
+            "type": "wysiwyg",
+            "instructions": "A short paragraph. What they do, what they care about.",
+            "tabs": "visual",
+            "toolbar": "hkla_minimal",
+            "media_upload": 0
+        },
+        {
+            "key": "field_hkla_person_headshot",
+            "label": "Headshot",
+            "name": "headshot",
+            "type": "image",
+            "instructions": "800px square minimum.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "min_width": 800,
+            "min_height": 800
+        },
+        {
+            "key": "field_hkla_person_is_leadership",
+            "label": "Leadership",
+            "name": "is_leadership",
+            "type": "true_false",
+            "instructions": "Shown first on the People page.",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "person"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

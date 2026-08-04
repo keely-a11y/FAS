@@ -1,0 +1,15 @@
+/*
+Theme Name: HKLA
+Theme URI: https://hklainc.com
+Author: Kilograph
+Author URI: https://kilograph.com
+Description: Custom theme for HKLA, Hongjoo Kim Landscape Architects. Narrative-first civic landscape portfolio. Shared spaces. Shared stories.
+Version: 0.1.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 8.1
+License: Proprietary
+Text Domain: hkla
+*/
+
+/* All styles live in assets/css/main.css, enqueued from functions.php. */
