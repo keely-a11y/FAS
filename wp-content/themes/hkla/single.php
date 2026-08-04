@@ -1,6 +1,6 @@
 <?php
 /**
- * Journal entry.
+ * News entry.
  *
  * @package hkla
  */
@@ -16,7 +16,7 @@ the_post();
 	<div class="prose">
 		<?php the_content(); ?>
 	</div>
-	<p class="band__more"><a class="text-link" href="<?php echo esc_url( home_url( '/journal/' ) ); ?>"><?php esc_html_e( 'Back to the journal', 'hkla' ); ?></a></p>
+	<p class="band__more"><a class="text-link" href="<?php echo esc_url( home_url( '/news/' ) ); ?>"><?php esc_html_e( 'Back to news', 'hkla' ); ?></a></p>
 </article>
 <?php
 get_footer();

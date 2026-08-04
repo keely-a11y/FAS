@@ -109,7 +109,7 @@ if ( $stats ) :
 			</div>
 		<?php endforeach; ?>
 	</dl>
-	<p class="band__more"><a class="text-link" href="<?php echo esc_url( home_url( '/purpose/' ) ); ?>"><?php esc_html_e( 'Our purpose', 'hkla' ); ?></a></p>
+	<p class="band__more"><a class="text-link" href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About the studio', 'hkla' ); ?></a></p>
 </section>
 <?php endif; ?>
 

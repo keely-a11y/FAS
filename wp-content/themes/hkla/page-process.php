@@ -2,7 +2,8 @@
 /**
  * Template Name: Process
  *
- * Framing statement, four stages, partners section, link to projects.
+ * Process Oriented Design (POD): framing, four stages, POD diagrams,
+ * partners section, link to projects.
  *
  * @package hkla
  */
@@ -12,8 +13,11 @@ the_post();
 ?>
 <div class="page-shell">
 	<header class="index-header">
-		<p class="eyebrow"><?php esc_html_e( 'Process', 'hkla' ); ?></p>
+		<p class="eyebrow"><?php esc_html_e( 'Process Oriented Design', 'hkla' ); ?></p>
 		<h1 class="display-l"><?php echo esc_html( hkla_field( 'framing_statement', false, 'Before a line is drawn, we find the story.' ) ); ?></h1>
+		<?php if ( hkla_field( 'framing_body' ) ) : ?>
+			<div class="lede prose"><?php hkla_rich_text( hkla_field( 'framing_body' ) ); ?></div>
+		<?php endif; ?>
 	</header>
 
 	<?php
@@ -39,6 +43,25 @@ the_post();
 			</li>
 		<?php endforeach; ?>
 	</ol>
+	<?php endif; ?>
+
+	<?php
+	$diagrams = hkla_field( 'pod_diagrams', false, array() );
+	if ( $diagrams ) :
+	?>
+	<section class="band" aria-labelledby="pod-heading">
+		<h2 id="pod-heading" class="eyebrow"><?php esc_html_e( 'POD, drawn out', 'hkla' ); ?></h2>
+		<?php foreach ( $diagrams as $diagram ) : ?>
+			<figure class="sketch-frame js-sketch stage__media">
+				<?php if ( ! empty( $diagram['image'] ) ) : ?>
+					<?php hkla_image( $diagram['image'], 'hkla-wide', array( 'class' => 'sketch-frame__img' ) ); ?>
+				<?php endif; ?>
+				<?php if ( ! empty( $diagram['caption'] ) ) : ?>
+					<figcaption class="caption"><?php echo esc_html( $diagram['caption'] ); ?></figcaption>
+				<?php endif; ?>
+			</figure>
+		<?php endforeach; ?>
+	</section>
 	<?php endif; ?>
 </div>
 

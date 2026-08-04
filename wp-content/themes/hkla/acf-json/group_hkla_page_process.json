@@ -10,6 +10,43 @@
             "default_value": "Before a line is drawn, we find the story."
         },
         {
+            "key": "field_hkla_process_framing_body",
+            "label": "Framing body",
+            "name": "framing_body",
+            "type": "wysiwyg",
+            "instructions": "What Process Oriented Design means, in 1 to 2 short paragraphs.",
+            "tabs": "visual",
+            "toolbar": "hkla_minimal",
+            "media_upload": 0
+        },
+        {
+            "key": "field_hkla_process_pod_diagrams",
+            "label": "POD diagrams",
+            "name": "pod_diagrams",
+            "type": "repeater",
+            "instructions": "Up to two Process Oriented Design diagrams, shown with the sketch treatment.",
+            "layout": "block",
+            "max": 2,
+            "button_label": "Add diagram",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_pod_diagram_image",
+                    "label": "Diagram",
+                    "name": "image",
+                    "type": "image",
+                    "required": 1,
+                    "return_format": "array",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_hkla_pod_diagram_caption",
+                    "label": "Caption",
+                    "name": "caption",
+                    "type": "text"
+                }
+            ]
+        },
+        {
             "key": "field_hkla_process_stages",
             "label": "Stages",
             "name": "stages",

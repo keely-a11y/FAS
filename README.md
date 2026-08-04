@@ -57,6 +57,7 @@ npx @wordpress/env run cli wp eval-file bin/seed-content.php
 
 ## Theme architecture
 
+- Committed sitemap (per the signed scope): Home, Process (POD), Projects + project template, About, News/Recognition + news template, Contact. People, Purpose, and Careers content folds into About; News is the native posts area.
 - Classic PHP templates plus `theme.json` used only for editor lockdown: the five brand colors as the palette, custom colors, gradients, and font sizes disabled.
 - CPTs and taxonomy registered in code: `inc/post-types.php` (`project` with `sector` taxonomy, `person`).
 - ACF field groups saved as JSON in `acf-json/`, loaded automatically.

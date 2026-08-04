@@ -28,29 +28,29 @@ function hkla_admin_menu_cleanup() {
 add_action( 'admin_menu', 'hkla_admin_menu_cleanup', 999 );
 
 /**
- * Rename Posts to Journal.
+ * Rename Posts to News.
  */
 function hkla_rename_posts_menu() {
 	global $menu, $submenu;
 	if ( isset( $menu ) ) {
 		foreach ( $menu as $key => $item ) {
 			if ( 'edit.php' === ( $item[2] ?? '' ) ) {
-				$menu[ $key ][0] = __( 'Journal', 'hkla' );
+				$menu[ $key ][0] = __( 'News', 'hkla' );
 			}
 		}
 	}
 	if ( isset( $submenu['edit.php'][5] ) ) {
-		$submenu['edit.php'][5][0] = __( 'All Journal Entries', 'hkla' );
+		$submenu['edit.php'][5][0] = __( 'All News Entries', 'hkla' );
 	}
 }
 add_action( 'admin_menu', 'hkla_rename_posts_menu' );
 
 function hkla_rename_posts_labels( $labels ) {
-	$labels->name          = __( 'Journal', 'hkla' );
-	$labels->singular_name = __( 'Journal Entry', 'hkla' );
-	$labels->add_new_item  = __( 'Add New Journal Entry', 'hkla' );
-	$labels->edit_item     = __( 'Edit Journal Entry', 'hkla' );
-	$labels->menu_name     = __( 'Journal', 'hkla' );
+	$labels->name          = __( 'News', 'hkla' );
+	$labels->singular_name = __( 'News Entry', 'hkla' );
+	$labels->add_new_item  = __( 'Add New News Entry', 'hkla' );
+	$labels->edit_item     = __( 'Edit News Entry', 'hkla' );
+	$labels->menu_name     = __( 'News', 'hkla' );
 	return $labels;
 }
 add_filter( 'post_type_labels_post', 'hkla_rename_posts_labels' );

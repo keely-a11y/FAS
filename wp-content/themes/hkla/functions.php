@@ -50,7 +50,7 @@ function hkla_lock_page_editor() {
 add_action( 'init', 'hkla_lock_page_editor', 20 );
 
 /**
- * Journal (native posts) is the one block editor surface, restricted to text and image.
+ * News (native posts) is the one block editor surface, restricted to text and image.
  */
 function hkla_allowed_blocks( $allowed, $context ) {
 	if ( isset( $context->post ) && 'post' === $context->post->post_type ) {

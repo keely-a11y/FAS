@@ -16,7 +16,10 @@ function hkla_legacy_redirects() {
 		'hkla_redirect_map',
 		array(
 			'/process-of-design' => '/process/',
-			'/about'             => '/people/',
+			'/journal'           => '/news/',
+			'/people'            => '/about/',
+			'/purpose'           => '/about/',
+			'/careers'           => '/about/',
 		)
 	);
 

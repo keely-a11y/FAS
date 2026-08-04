@@ -21,15 +21,15 @@ Go to **People**, open the person, edit their role, credentials, bio, or headsho
 
 ## Post an open role
 
-Go to **Site Settings, Open roles**, click **Add role**, fill in the title, type, location, description, and an apply link (a normal URL or `mailto:careers@hklainc.com`). Remove a role by hovering over its row and clicking the minus.
+Go to **Site Settings, Open roles** (shown on the About page), click **Add role**, fill in the title, type, location, description, and an apply link (a normal URL or `mailto:careers@hklainc.com`). Remove a role by hovering over its row and clicking the minus.
 
 ## Update contact details
 
 **Site Settings** holds the address, phone, email, social links, and the footer line.
 
-## Journal
+## News
 
-**Journal** entries use a simple editor limited to text and images. Write short and confident, like everything else on the site.
+**News** entries use a simple editor limited to text and images. Write short and confident, like everything else on the site.
 
 ## Two rules that matter
 

@@ -3,13 +3,15 @@
  * HKLA seed content. Run with:
  *   wp eval-file bin/seed-content.php
  *
- * Creates the brand pages (with templates assigned), three sample projects
- * with placeholder imagery and copy in the brand voice, sample people, and
- * site settings. Idempotent: existing items are left alone.
+ * Creates the committed pages (Home, Process, Projects archive, About,
+ * News, Contact), three real HKLA projects with copy edited into the new
+ * brand voice, sample people, and site settings. Idempotent: existing
+ * items are left alone.
  *
+ * Project facts and copy are drawn from hklainc.com and public sources,
+ * tone-aligned to the new brand. Verify details with HKLA before launch.
  * Placeholder images are generated locally with GD in the palette's warm
- * tones, so no network access is needed. Replace with real photography from
- * the asset pack.
+ * tones; replace with real photography from the asset pack.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -103,79 +105,65 @@ hkla_seed_sectors();
 
 WP_CLI::log( 'Seeding pages...' );
 $home_id    = hkla_seed_page( 'Home', 'home' );
-$process_id  = hkla_seed_page( 'Process', 'process', 'page-process.php' );
-$people_id   = hkla_seed_page( 'People', 'people', 'page-people.php' );
-$purpose_id  = hkla_seed_page( 'Purpose', 'purpose', 'page-purpose.php' );
-$careers_id  = hkla_seed_page( 'Careers', 'careers', 'page-careers.php' );
-$contact_id  = hkla_seed_page( 'Contact', 'contact', 'page-contact.php' );
-$journal_id  = hkla_seed_page( 'Journal', 'journal' );
+$process_id = hkla_seed_page( 'Process', 'process', 'page-process.php' );
+$about_id   = hkla_seed_page( 'About', 'about', 'page-about.php' );
+$contact_id = hkla_seed_page( 'Contact', 'contact', 'page-contact.php' );
+$news_id    = hkla_seed_page( 'News', 'news' );
 
 update_option( 'show_on_front', 'page' );
 update_option( 'page_on_front', $home_id );
-update_option( 'page_for_posts', $journal_id );
+update_option( 'page_for_posts', $news_id );
 
 /**
- * Three sample projects. Copy is placeholder, written in the brand voice:
+ * Three real HKLA projects, copy tone-aligned to the new brand voice:
  * short declarative headlines, no jargon, no hedging, no em dashes.
  */
 $projects = array(
 	array(
-		'title'    => 'Wilmington Greenbelt',
+		'title'    => 'Vermont Miracle Park',
 		'sector'   => 'civic-parks',
 		'tone'     => 'moss',
-		'headline' => 'A freeway buffer became a front yard.',
-		'intro'    => "<p>For decades, the neighborhood ended at a fence. Nine acres of leftover land sat between the houses and the harbor, holding nothing but weeds and noise.</p><p>We listened to the people who lived with it. They did not ask for a landmark. They asked for shade, for a place to walk, for somewhere their kids could be outside. The design answers them.</p>",
+		'headline' => 'Open space for a neighborhood that had none.',
+		'intro'    => "<p>South Los Angeles has some of the least park space in the county. This block of Vermont Avenue had a story worth building on.</p><p>The park carries five values the community chose: creativity, leadership, positivism, stewardship, and resiliency. Every path, planting, and gathering place answers to one of them.</p>",
 		'facts'    => array(
-			'client'     => 'City of Los Angeles',
-			'location'   => 'Wilmington, Los Angeles',
-			'size'       => '9.1 acres',
-			'completion' => '2025',
+			'location'   => 'South Los Angeles',
 			'services'   => 'Landscape architecture, community engagement, planting design',
 		),
-		'impact'   => 'A neighborhood that had the least park space in the harbor area now has a green spine it can walk end to end.',
+		'impact'   => 'An underserved community gained real open space, designed around the values its residents named.',
 		'metrics'  => array(
-			array( 'value' => '9.1', 'label' => 'Acres of new open space' ),
-			array( 'value' => '420', 'label' => 'New trees planted' ),
-			array( 'value' => '12', 'label' => 'Community workshops held' ),
+			array( 'value' => '5', 'label' => 'Community values built into the design' ),
 		),
 	),
 	array(
-		'title'    => 'Esperanza Elementary Schoolyard',
+		'title'    => 'UCR Student Success Center',
 		'sector'   => 'education',
 		'tone'     => 'earth',
-		'headline' => 'The asphalt came up. The kids came out.',
-		'intro'    => "<p>A struggling tree, overhead flight paths, chain-link fencing. Where others saw problems, we saw potential.</p><p>Working with teachers, students, and families, we traded two acres of asphalt for shade, gardens, and ground that absorbs the rain instead of shedding it. Recess looks different now. So does science class.</p>",
+		'headline' => 'A campus crossroads became common ground.',
+		'intro'    => "<p>A student center works when students actually cross paths. The landscape makes that happen.</p><p>Porous, multi-level circulation draws people through, and carefully placed outdoor rooms give them reasons to stay. Campus planting palettes and paving let the new center belong to Riverside from day one.</p>",
 		'facts'    => array(
-			'client'     => 'Los Angeles Unified School District',
-			'location'   => 'Westlake, Los Angeles',
-			'size'       => '2.3 acres',
-			'completion' => '2024',
-			'services'   => 'Landscape architecture, schoolyard greening, stormwater design',
+			'client'     => 'University of California, Riverside',
+			'location'   => 'Riverside, California',
+			'completion' => '2022',
+			'services'   => 'Landscape architecture, hardscape design, campus integration',
 		),
-		'impact'   => 'One of the hottest schoolyards in the district is now one of its coolest, and every classroom uses it.',
+		'impact'   => 'The center reads as if it was always part of campus, and the outdoor spaces work as hard as the building.',
 		'metrics'  => array(
-			array( 'value' => '85%', 'label' => 'Asphalt removed' ),
-			array( 'value' => '14°F', 'label' => 'Surface temperature drop' ),
+			array( 'value' => '2022', 'label' => 'DBDA National Award' ),
 		),
 	),
 	array(
-		'title'    => 'Harbor Wellness Campus',
+		'title'    => 'Rancho Los Amigos National Rehabilitation Center',
 		'sector'   => 'healthcare',
 		'tone'     => 'stone',
-		'headline' => 'A garden that works as hard as the clinic.',
-		'intro'    => "<p>Healing does not stop at the building door. The county asked for landscape around a new wellness center. We gave them landscape that is part of the treatment.</p><p>Quiet courtyards for counseling. A walking loop measured for physical therapy. Planting chosen for calm, for shade, and for the birds that patients name from the waiting room.</p>",
+		'headline' => 'Landscape as part of the recovery.',
+		'intro'    => "<p>Healing does not stop at the building door. At one of the nation's leading rehabilitation hospitals, the grounds are part of the treatment.</p><p>Quiet courtyards, accessible paths, and planting chosen for calm give patients, families, and staff a place to breathe.</p>",
 		'facts'    => array(
 			'client'     => 'County of Los Angeles',
-			'location'   => 'San Pedro, Los Angeles',
-			'size'       => '4.2 acres',
-			'completion' => 'In progress',
-			'services'   => 'Landscape architecture, therapeutic gardens, native planting',
+			'location'   => 'Downey, California',
+			'services'   => 'Landscape architecture, therapeutic landscape, accessible design',
 		),
-		'impact'   => 'The campus treats the grounds as clinical space, and patients spend part of every visit outdoors.',
-		'metrics'  => array(
-			array( 'value' => '100%', 'label' => 'Native or climate-adapted planting' ),
-			array( 'value' => '0.6 mi', 'label' => 'Accessible walking loop' ),
-		),
+		'impact'   => 'The campus treats its open space as clinical space, and patients use it every day.',
+		'metrics'  => array(),
 	),
 );
 
@@ -223,23 +211,17 @@ foreach ( $projects as $data ) {
 				array(
 					'acf_fc_layout' => 'text',
 					'heading'       => 'Listening first',
-					'body'          => '<p>The design began in folding chairs, not at a drafting table. What the community asked for is what got built.</p>',
+					'body'          => '<p>The design began with the people who use this place every day. What they asked for is what got built.</p>',
 				),
 				array(
 					'acf_fc_layout' => 'full_image',
 					'image'         => $wide_id,
-					'caption'       => 'The site, before and after listening.',
+					'caption'       => 'Placeholder photography. Real imagery arrives with the asset pack.',
 				),
 				array(
 					'acf_fc_layout' => 'sketch',
 					'image'         => $sketch_id,
 					'caption'       => 'The first drawing, made by hand on site.',
-				),
-				array(
-					'acf_fc_layout' => 'voice',
-					'quote'         => 'They kept showing up. They kept asking us what we wanted. And then they built it.',
-					'name'          => 'A neighbor',
-					'role'          => 'Community member',
 				),
 			),
 			$id
@@ -250,9 +232,7 @@ foreach ( $projects as $data ) {
 
 WP_CLI::log( 'Seeding people...' );
 $people = array(
-	array( 'name' => 'Hongjoo Kim', 'role' => 'Founding Principal', 'credentials' => 'PLA, ASLA', 'leadership' => true ),
-	array( 'name' => 'Maria Delgado', 'role' => 'Senior Landscape Architect', 'credentials' => 'PLA', 'leadership' => true ),
-	array( 'name' => 'James Park', 'role' => 'Project Designer', 'credentials' => '', 'leadership' => false ),
+	array( 'name' => 'Hongjoo Kim', 'role' => 'Founding Principal', 'credentials' => 'ASLA, PLA', 'leadership' => true ),
 );
 $order = 0;
 foreach ( $people as $p ) {
@@ -273,17 +253,18 @@ foreach ( $people as $p ) {
 	$headshot = hkla_seed_image( $p['name'] . ' headshot', 800, 800, 'stone' );
 	update_field( 'role_title', $p['role'], $id );
 	update_field( 'credentials', $p['credentials'], $id );
-	update_field( 'bio', '<p>Placeholder bio. ' . $p['name'] . ' shapes public places with care, craft, and a bias for listening.</p>', $id );
+	update_field( 'bio', '<p>Hongjoo founded HKLA in 2012. He holds a Master of Landscape Architecture from the Harvard Graduate School of Design and brings nearly three decades of practice to every project.</p>', $id );
 	update_field( 'headshot', $headshot, $id );
 	update_field( 'is_leadership', $p['leadership'], $id );
 }
 
-WP_CLI::log( 'Seeding site settings and home fields...' );
+WP_CLI::log( 'Seeding site settings and page fields...' );
 if ( function_exists( 'update_field' ) ) {
 	update_field( 'address', "714 West Olympic Blvd, Suite 735\nLos Angeles, CA 90015", 'option' );
-	update_field( 'email', 'hello@hklainc.com', 'option' );
+	update_field( 'email', 'info@hklainc.com', 'option' );
 	update_field( 'footer_line', 'Shared spaces. Shared stories.', 'option' );
 
+	// Home.
 	$project_ids = get_posts(
 		array(
 			'post_type'      => 'project',
@@ -298,21 +279,29 @@ if ( function_exists( 'update_field' ) ) {
 	update_field( 'process_sketch', hkla_seed_image( 'Process sketch', 1600, 1100, 'paper' ), $home_id );
 	update_field( 'process_photo', hkla_seed_image( 'Process photo', 1600, 1100, 'moss' ), $home_id );
 	update_field( 'process_caption', 'Every project begins as a drawing. The hand finds what the survey cannot.', $home_id );
-	update_field( 'quote_text', 'They designed with us, not for us.', $home_id );
-	update_field( 'quote_name', 'Community partner', $home_id );
 	update_field(
 		'stats',
 		array(
-			array( 'value' => '60+', 'label' => 'Public projects' ),
-			array( 'value' => '15', 'label' => 'Acres of asphalt removed' ),
+			array( 'value' => '2012', 'label' => 'Practicing since' ),
+			array( 'value' => '345', 'label' => 'Acres as CSUDH campus landscape architect' ),
 			array( 'value' => '5', 'label' => 'Sectors served' ),
+		),
+		$home_id
+	);
+	update_field(
+		'recognition',
+		array(
+			array( 'name' => 'DBDA National Award 2022' ),
+			array( 'name' => 'ASLA' ),
+			array( 'name' => 'CSUDH Campus Master Landscape Architect' ),
 		),
 		$home_id
 	);
 	update_field( 'contact_invitation', 'Every client works directly with our senior team.', $home_id );
 
-	// Process page stages.
+	// Process (POD).
 	update_field( 'framing_statement', 'Before a line is drawn, we find the story.', $process_id );
+	update_field( 'framing_body', '<p>From the first conceptual sketch to construction, our commitment runs through Process Oriented Design. POD is how we uncover what a place is trying to say, then build it with purpose for people and the environment.</p>', $process_id );
 	update_field(
 		'stages',
 		array(
@@ -343,41 +332,47 @@ if ( function_exists( 'update_field' ) ) {
 		),
 		$process_id
 	);
+	update_field(
+		'pod_diagrams',
+		array(
+			array(
+				'image'   => hkla_seed_image( 'POD diagram one', 1600, 1000, 'paper' ),
+				'caption' => 'Process Oriented Design, from listening to opening day. Final diagram to come.',
+			),
+		),
+		$process_id
+	);
 
-	// People page.
-	update_field( 'framing_statement', 'The people behind the places.', $people_id );
-	update_field( 'founder_name', 'Hongjoo Kim', $people_id );
-	update_field( 'founder_title', 'Founding Principal', $people_id );
-	update_field( 'founder_bio', '<p>Placeholder bio. Hongjoo founded HKLA to make civic landscape a specialty, not a sideline. Three decades of public work stand behind the studio.</p>', $people_id );
-	update_field( 'founder_portrait', hkla_seed_image( 'Hongjoo Kim portrait', 1200, 1500, 'stone' ), $people_id );
-	update_field( 'boutique_statement', 'Boutique by design. Small enough that every project gets our best people. Experienced enough that nothing surprises us.', $people_id );
-
-	// Purpose page.
-	update_field( 'framing_headline', 'Design as a civic act.', $purpose_id );
-	update_field( 'framing_body', '<p>Public landscape is infrastructure for shared life. We hold every project to commitments that outlast the ribbon cutting.</p>', $purpose_id );
+	// About.
+	update_field( 'framing_statement', 'Harmony between people and nature.', $about_id );
+	update_field( 'approach_body', '<p>HKLA is a full service landscape architecture practice in Los Angeles, founded in 2012. Three principles guide the work: collaborative design, contextual exploration of landscape as art, and innovative urban ecology. The goal is simple: harmony between people and nature.</p>', $about_id );
+	update_field( 'founder_name', 'Hongjoo Kim', $about_id );
+	update_field( 'founder_title', 'Founding Principal, ASLA', $about_id );
+	update_field( 'founder_bio', '<p>Hongjoo founded HKLA in 2012. He holds a Master of Landscape Architecture from the Harvard Graduate School of Design and brings nearly three decades of practice to public work across Southern California.</p>', $about_id );
+	update_field( 'founder_portrait', hkla_seed_image( 'Hongjoo Kim portrait', 1200, 1500, 'stone' ), $about_id );
+	update_field( 'boutique_statement', 'Boutique by design. Small enough that every project gets our best people. Experienced enough that nothing surprises us.', $about_id );
 	update_field(
 		'commitments',
 		array(
-			array( 'title' => 'Climate resilience', 'body' => '<p>Shade, cooling, and planting that thrives in the climate we are getting, not the one we had.</p>' ),
-			array( 'title' => 'Water management', 'body' => '<p>Ground that drinks the rain. Stormwater is a resource, not a nuisance.</p>' ),
-			array( 'title' => 'Habitat support', 'body' => '<p>Native planting that feeds birds, pollinators, and the soil itself.</p>' ),
-			array( 'title' => 'Long-term maintainability', 'body' => '<p>Designs that public crews can actually keep beautiful, year after year.</p>' ),
+			array( 'title' => 'Native and drought tolerant planting', 'body' => '<p>Planting that thrives in the climate we are getting, not the one we had.</p>' ),
+			array( 'title' => 'Stormwater and groundwater recharge', 'body' => '<p>Ground that drinks the rain. Stormwater is a resource, not a nuisance.</p>' ),
+			array( 'title' => 'Recycled and local materials', 'body' => '<p>Materials sourced close to home, with second lives built in.</p>' ),
+			array( 'title' => 'Cooling and shade', 'body' => '<p>Design that prevents solar heat gain and gives every visitor somewhere cool to be.</p>' ),
 		),
-		$purpose_id
+		$about_id
 	);
-	update_field( 'outcomes', '<p>Cooler schoolyards. Walkable green corridors. Clinics with gardens that work. The outcomes we count are the ones neighbors feel.</p>', $purpose_id );
 	update_field(
-		'numbers',
+		'recognition',
 		array(
-			array( 'value' => '60+', 'label' => 'Public projects delivered' ),
-			array( 'value' => '1M+', 'label' => 'Annual visitors to our places' ),
+			array( 'title' => 'DBDA National Award', 'organization' => 'UCR Student Success Center', 'year' => '2022' ),
+			array( 'title' => 'Campus Master Landscape Architect', 'organization' => 'CSU Dominguez Hills', 'year' => 'Since 2018' ),
+			array( 'title' => 'Little Saigon Streetscape Feasibility Study', 'organization' => 'City of Westminster', 'year' => '' ),
 		),
-		$purpose_id
+		$about_id
 	);
+	update_field( 'contact_invitation', 'Every client works directly with our senior team.', $about_id );
 
-	// Careers and contact.
-	update_field( 'culture_statement', 'Do the best work of your career on places everyone can use.', $careers_id );
-	update_field( 'speculative_text', 'If you believe public space is worth a career, introduce yourself.', $careers_id );
+	// Contact.
 	update_field( 'statement', 'Every client works directly with our senior team.', $contact_id );
 }
 

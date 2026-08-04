@@ -1,6 +1,6 @@
 <?php
 /**
- * Journal index (phase 2, native posts).
+ * News + Recognition index (native posts).
  *
  * @package hkla
  */
@@ -9,8 +9,8 @@ get_header();
 ?>
 <div class="page-shell">
 	<header class="index-header">
-		<p class="eyebrow"><?php esc_html_e( 'Journal', 'hkla' ); ?></p>
-		<h1 class="display-l"><?php esc_html_e( 'Notes from the studio.', 'hkla' ); ?></h1>
+		<p class="eyebrow"><?php esc_html_e( 'News + Recognition', 'hkla' ); ?></p>
+		<h1 class="display-l"><?php esc_html_e( 'What the work is earning.', 'hkla' ); ?></h1>
 	</header>
 
 	<?php if ( have_posts() ) : ?>
@@ -26,7 +26,7 @@ get_header();
 		</ul>
 		<?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
 	<?php else : ?>
-		<p class="lede"><?php esc_html_e( 'The journal starts soon.', 'hkla' ); ?></p>
+		<p class="lede"><?php esc_html_e( 'News is coming.', 'hkla' ); ?></p>
 	<?php endif; ?>
 </div>
 <?php
