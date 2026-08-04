@@ -15,6 +15,10 @@ composer.json             Documented plugin list for environment reproduction
 
 The repo root also contains a legacy static site from a previous project; it is unrelated to the WordPress build and can be removed when convenient.
 
+## Quick design preview (no WordPress needed)
+
+Open `preview/index.html` in any browser. It is a self-contained page built from the theme's actual CSS with placeholder imagery embedded, switchable between the Home, Projects index, and single-project views. Use it for the phase 1 design review.
+
 ## Local development
 
 Requires Docker and Node.
@@ -25,11 +29,13 @@ npx @wordpress/env start
 
 This boots WordPress at `http://localhost:8888` (admin: `admin` / `password`) with the `hkla` theme mapped and active.
 
-Then install plugins. ACF Pro is licensed and must be installed manually (upload the zip or use a Composer auth token). Free plugins:
+Then install plugins. Without an ACF Pro license, use Secure Custom Fields (the free WordPress.org fork that includes the former Pro features: repeaters, flexible content, gallery, options pages). It keeps the same `get_field`/`have_rows` API and reads the same `acf-json/` field groups, so the theme runs unchanged:
 
 ```bash
-npx @wordpress/env run cli wp plugin install safe-svg wpforms-lite redirection --activate
+npx @wordpress/env run cli wp plugin install secure-custom-fields safe-svg wpforms-lite redirection --activate
 ```
+
+With an ACF Pro license, install it instead (upload the zip or use a Composer auth token) and skip `secure-custom-fields` above. Either works; pick one, not both.
 
 Seed content (pages, sample projects, people, site settings):
 
