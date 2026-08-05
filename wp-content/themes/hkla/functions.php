@@ -83,12 +83,15 @@ add_action( 'wp_enqueue_scripts', 'hkla_assets', 20 );
  * Preload the brand webfont once the licensed WOFF2 files land in assets/fonts/.
  */
 function hkla_preload_fonts() {
-	$font = HKLA_DIR . '/assets/fonts/jl-jungka-regular.woff2';
-	if ( file_exists( $font ) ) {
-		printf(
-			'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
-			esc_url( HKLA_URI . '/assets/fonts/jl-jungka-regular.woff2' )
-		);
+	// Jungka wins when licensed; Instrument Sans is the interim.
+	foreach ( array( 'jl-jungka-regular.woff2', 'instrument-sans-latin-var.woff2' ) as $file ) {
+		if ( file_exists( HKLA_DIR . '/assets/fonts/' . $file ) ) {
+			printf(
+				'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+				esc_url( HKLA_URI . '/assets/fonts/' . $file )
+			);
+			break;
+		}
 	}
 }
 add_action( 'wp_head', 'hkla_preload_fonts', 2 );

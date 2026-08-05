@@ -27,17 +27,24 @@ the_post();
 	<ol class="stages">
 		<?php foreach ( $stages as $i => $stage ) : ?>
 			<li class="stage reveal">
-				<p class="stage__number eyebrow"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></p>
-				<h2 class="stage__title display-m"><?php echo esc_html( $stage['title'] ?? '' ); ?></h2>
-				<?php if ( ! empty( $stage['statement'] ) ) : ?>
-					<p class="stage__statement lede"><?php echo esc_html( $stage['statement'] ); ?></p>
-				<?php endif; ?>
-				<?php if ( ! empty( $stage['body'] ) ) : ?>
-					<div class="stage__body prose"><?php hkla_rich_text( $stage['body'] ); ?></div>
-				<?php endif; ?>
-				<?php if ( ! empty( $stage['image'] ) ) : ?>
-					<figure class="stage__media <?php echo ( 2 === $i ) ? 'sketch-frame js-sketch' : ''; ?>">
-						<?php hkla_image( $stage['image'], 'hkla-wide', array( 'class' => ( 2 === $i ) ? 'sketch-frame__img' : '' ) ); ?>
+				<div class="stage__text">
+					<p class="stage__number eyebrow"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></p>
+					<h2 class="stage__title display-m"><?php echo esc_html( $stage['title'] ?? '' ); ?></h2>
+					<?php if ( ! empty( $stage['statement'] ) ) : ?>
+						<p class="stage__statement lede"><?php echo esc_html( $stage['statement'] ); ?></p>
+					<?php endif; ?>
+					<?php if ( ! empty( $stage['body'] ) ) : ?>
+						<div class="stage__body prose"><?php hkla_rich_text( $stage['body'] ); ?></div>
+					<?php endif; ?>
+				</div>
+				<?php if ( ! empty( $stage['image'] ) && ! empty( $stage['image_2'] ) ) : ?>
+					<div class="stage__media stage__media-grid">
+						<figure><?php hkla_image( $stage['image'], 'hkla-half' ); ?></figure>
+						<figure><?php hkla_image( $stage['image_2'], 'hkla-half' ); ?></figure>
+					</div>
+				<?php elseif ( ! empty( $stage['image'] ) ) : ?>
+					<figure class="stage__media stage__media--single">
+						<?php hkla_image( $stage['image'], 'hkla-wide' ); ?>
 					</figure>
 				<?php endif; ?>
 			</li>

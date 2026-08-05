@@ -310,24 +310,28 @@ if ( function_exists( 'update_field' ) ) {
 				'statement' => 'Every place already has people who know it best.',
 				'body'      => '<p>We start in the community, not the studio. Workshops, walks, and conversations shape the brief before the design begins.</p>',
 				'image'     => hkla_seed_image( 'Stage listen', 1600, 1000, 'stone' ),
+				'image_2'   => hkla_seed_image( 'Stage listen detail', 1600, 1000, 'stone' ),
 			),
 			array(
 				'title'     => 'Find the story',
 				'statement' => 'A site is a narrative waiting to be read.',
 				'body'      => '<p>History, ecology, and daily life give each place its plot. The design grows from what is already true.</p>',
 				'image'     => hkla_seed_image( 'Stage story', 1600, 1000, 'earth' ),
+				'image_2'   => hkla_seed_image( 'Stage story detail', 1600, 1000, 'earth' ),
 			),
 			array(
 				'title'     => 'Draw by hand',
 				'statement' => 'The hand finds what the survey cannot.',
 				'body'      => '<p>We draw before we model. Sketching keeps the design honest, human, and open to change.</p>',
 				'image'     => hkla_seed_image( 'Stage draw', 1600, 1000, 'paper' ),
+				'image_2'   => hkla_seed_image( 'Stage draw detail', 1600, 1000, 'paper' ),
 			),
 			array(
 				'title'     => 'Build together',
 				'statement' => 'Construction is a continuation of the conversation.',
 				'body'      => '<p>We stay close through documentation and construction, and the community stays involved until opening day.</p>',
 				'image'     => hkla_seed_image( 'Stage build', 1600, 1000, 'moss' ),
+				'image_2'   => hkla_seed_image( 'Stage build detail', 1600, 1000, 'moss' ),
 			),
 		),
 		$process_id
@@ -344,6 +348,16 @@ if ( function_exists( 'update_field' ) ) {
 	);
 
 	// About.
+	update_field( 'belief_statement', 'Urban open space is the pinnacle of democratic practice. Everyone, regardless of origin, color, religion, or interest, can be there together.', $about_id );
+	update_field(
+		'principles',
+		array(
+			array( 'title' => 'Collaborative design', 'body' => '<p>The best ideas come from the table with the most seats. Community, client, and collaborators shape the work with us.</p>' ),
+			array( 'title' => 'Landscape as art, in context', 'body' => '<p>Every site has a story worth telling. We read the context first and let the art grow out of it.</p>' ),
+			array( 'title' => 'Innovative urban ecology', 'body' => '<p>Native planting, stormwater as a resource, materials with second lives. Ecology is a design tool, not a checkbox.</p>' ),
+		),
+		$about_id
+	);
 	update_field( 'framing_statement', 'Harmony between people and nature.', $about_id );
 	update_field( 'approach_body', '<p>HKLA is a full service landscape architecture practice in Los Angeles, founded in 2012. Three principles guide the work: collaborative design, contextual exploration of landscape as art, and innovative urban ecology. The goal is simple: harmony between people and nature.</p>', $about_id );
 	update_field( 'founder_name', 'Hongjoo Kim', $about_id );
@@ -374,6 +388,47 @@ if ( function_exists( 'update_field' ) ) {
 
 	// Contact.
 	update_field( 'statement', 'Every client works directly with our senior team.', $contact_id );
+}
+
+WP_CLI::log( 'Seeding news entries...' );
+$news_items = array(
+	array(
+		'title'    => 'UCR Student Success Center wins a DBDA National Award',
+		'category' => 'Recognition',
+		'date'     => '2022-06-15 09:00:00',
+		'excerpt'  => 'The campus landscape that makes the new center belong to Riverside earns national recognition.',
+		'image'    => 'UCR Student Success Center hero',
+	),
+	array(
+		'title'    => 'Westminster selects HKLA for the Little Saigon streetscape study',
+		'category' => 'News',
+		'date'     => '2024-03-01 09:00:00',
+		'excerpt'  => 'The City of Westminster taps the studio to lead the Little Saigon streetscape feasibility study.',
+		'image'    => 'Stage listen',
+	),
+);
+foreach ( $news_items as $item ) {
+	if ( get_page_by_path( sanitize_title( $item['title'] ), OBJECT, 'post' ) ) {
+		continue;
+	}
+	$cat_id = wp_create_category( $item['category'] );
+	$pid    = wp_insert_post(
+		array(
+			'post_type'     => 'post',
+			'post_title'    => $item['title'],
+			'post_excerpt'  => $item['excerpt'],
+			'post_content'  => '<p>' . $item['excerpt'] . ' Full entry to come; confirm details with HKLA.</p>',
+			'post_status'   => 'publish',
+			'post_date'     => $item['date'],
+			'post_category' => array( $cat_id ),
+		)
+	);
+	if ( ! is_wp_error( $pid ) ) {
+		$thumb = hkla_seed_image( $item['image'], 1600, 1067, 'earth' );
+		if ( $thumb ) {
+			set_post_thumbnail( $pid, $thumb );
+		}
+	}
 }
 
 flush_rewrite_rules();

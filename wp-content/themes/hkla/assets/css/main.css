@@ -4,6 +4,17 @@
    and the project hero. Signal used sparingly, never as text on light.
    ========================================================================== */
 
+/* Interim typeface: Instrument Sans (OFL, self-hosted variable font).
+   JL Jungka sits first in the stack; add its @font-face here when the
+   licensed WOFF2 files land and it takes over with no other changes. */
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("../fonts/instrument-sans-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --------------------------------------------------------------------------
    Tokens. Palette is provisional (identity deck v3); final hex values swap
    here and nowhere else. The brand typeface swap is the one --font-sans line
@@ -16,7 +27,7 @@
   --color-signal: #C9E35B;
   --color-white:  #FFFFFF;
 
-  --font-sans: "JL Jungka", "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "JL Jungka", "Instrument Sans", "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* Fluid type scale */
   --step--1: clamp(0.8125rem, 0.79rem + 0.15vw, 0.875rem);
@@ -119,11 +130,13 @@ button {
 /* --------------------------------------------------------------------------
    Typography roles
    -------------------------------------------------------------------------- */
+/* Home hero only. Body typeface at a modest scale, per client direction:
+   an understated statement over the image, not display type. */
 .display-xl {
-  font-size: var(--step-5);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  font-weight: 600;
+  font-size: var(--step-3);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 400;
 }
 
 .display-l {
@@ -800,6 +813,38 @@ button {
   margin-top: var(--space-3);
 }
 
+/* Regular grid per stage: text column left, uniform 4:3 imagery right. */
+@media (min-width: 800px) {
+  .stage {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: var(--space-3);
+    align-items: start;
+  }
+  .stage__media {
+    margin-top: 0;
+  }
+}
+
+.stage__media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.stage__media-grid figure {
+  margin: 0;
+}
+
+.stage__media-grid img,
+.stage__media--single img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
 .band--partners {
   border-top: 1px solid var(--color-stone);
 }
@@ -817,6 +862,29 @@ button {
   display: grid;
   gap: var(--space-3);
   padding-block: var(--space-3);
+}
+
+.principles {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 800px) {
+  .principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.principle {
+  border-top: 1px solid var(--color-stone);
+  padding-top: var(--space-2);
+}
+
+.principle__title {
+  margin: 0 0 var(--space-1);
 }
 
 @media (min-width: 800px) {
@@ -992,7 +1060,81 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   Journal
+   News + Recognition: featured entry, then a regular card grid.
+   -------------------------------------------------------------------------- */
+.news-featured {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 800px) {
+  .news-featured {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: center;
+  }
+}
+
+.news-featured__media,
+.news-card__media {
+  margin: 0;
+  background: var(--color-stone);
+}
+
+.news-featured__media img,
+.news-card__media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.news-card__media--empty {
+  aspect-ratio: 3 / 2;
+}
+
+.news-card__media--moss { background: var(--color-moss, #7A8267); }
+.news-card__media--earth { background: var(--color-earth, #766452); }
+
+.news-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4) var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.news-card a,
+.news-featured a {
+  text-decoration: none;
+  display: block;
+}
+
+.news-card__meta,
+.news-featured__meta {
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+.news-card a:hover .display-s,
+.news-featured a:hover .display-m {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Journal (legacy list, kept for text-only fallback)
    -------------------------------------------------------------------------- */
 .journal-list {
   list-style: none;
@@ -1043,10 +1185,10 @@ button {
 }
 
 .site-footer__line {
-  font-size: var(--step-3);
-  line-height: 1.12;
-  letter-spacing: -0.015em;
-  font-weight: 600;
+  font-size: var(--step-2);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 400;
   max-width: 24ch;
   margin-bottom: var(--space-4);
 }

@@ -87,6 +87,15 @@
                     "instructions": "Site notes, a sketch, a model, a build photo.",
                     "return_format": "array",
                     "preview_size": "medium"
+                },
+                {
+                    "key": "field_hkla_process_stage_image_2",
+                    "label": "Second image (optional)",
+                    "name": "image_2",
+                    "type": "image",
+                    "instructions": "With two images the stage shows a side-by-side pair; with one, a single wide image.",
+                    "return_format": "array",
+                    "preview_size": "medium"
                 }
             ]
         },

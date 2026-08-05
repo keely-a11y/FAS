@@ -19,6 +19,33 @@ the_post();
 			<div class="lede prose"><?php hkla_rich_text( hkla_field( 'approach_body' ) ); ?></div>
 		<?php endif; ?>
 	</header>
+</div>
+
+<?php if ( hkla_field( 'belief_statement' ) ) : ?>
+<section class="band band--statement reveal">
+	<p class="display-m"><?php echo esc_html( hkla_field( 'belief_statement' ) ); ?></p>
+</section>
+<?php endif; ?>
+
+<div class="page-shell">
+	<?php
+	$principles = hkla_field( 'principles', false, array() );
+	if ( $principles ) :
+	?>
+	<section aria-labelledby="principles-heading">
+		<h2 id="principles-heading" class="eyebrow"><?php esc_html_e( 'Three principles', 'hkla' ); ?></h2>
+		<ol class="principles">
+			<?php foreach ( $principles as $principle ) : ?>
+				<li class="principle reveal">
+					<h3 class="principle__title display-s"><?php echo esc_html( $principle['title'] ?? '' ); ?></h3>
+					<?php if ( ! empty( $principle['body'] ) ) : ?>
+						<div class="prose"><?php hkla_rich_text( $principle['body'] ); ?></div>
+					<?php endif; ?>
+				</li>
+			<?php endforeach; ?>
+		</ol>
+	</section>
+	<?php endif; ?>
 
 	<?php
 	$founder_name = hkla_field( 'founder_name', false, 'Hongjoo Kim' );
