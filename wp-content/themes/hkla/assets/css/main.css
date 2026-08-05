@@ -139,8 +139,9 @@ button {
   font-weight: 400;
 }
 
+/* Display roles sit one step down the scale, per client direction. */
 .display-l {
-  font-size: var(--step-4);
+  font-size: var(--step-3);
   line-height: 1.05;
   letter-spacing: -0.02em;
   font-weight: 600;
@@ -148,7 +149,7 @@ button {
 }
 
 .display-m {
-  font-size: var(--step-3);
+  font-size: var(--step-2);
   line-height: 1.12;
   letter-spacing: -0.015em;
   font-weight: 600;
@@ -156,7 +157,7 @@ button {
 }
 
 .display-s {
-  font-size: var(--step-2);
+  font-size: var(--step-1);
   line-height: 1.2;
   letter-spacing: -0.01em;
   font-weight: 600;
