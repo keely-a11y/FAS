@@ -940,6 +940,17 @@ button {
   margin-bottom: var(--space-2);
 }
 
+.person__headshot img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.person__headshot--empty {
+  aspect-ratio: 1;
+}
+
 .person__name {
   font-size: var(--step-1);
   font-weight: 600;

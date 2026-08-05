@@ -231,8 +231,13 @@ foreach ( $projects as $data ) {
 }
 
 WP_CLI::log( 'Seeding people...' );
+// Names from public directories; titles unpublished, confirm with HKLA.
 $people = array(
 	array( 'name' => 'Hongjoo Kim', 'role' => 'Founding Principal', 'credentials' => 'ASLA, PLA', 'leadership' => true ),
+	array( 'name' => 'David Hanrahan', 'role' => 'Title to confirm', 'credentials' => '', 'leadership' => false ),
+	array( 'name' => 'Zhaoheng Chen', 'role' => 'Title to confirm', 'credentials' => '', 'leadership' => false ),
+	array( 'name' => 'Minglei Xiong', 'role' => 'Title to confirm', 'credentials' => '', 'leadership' => false ),
+	array( 'name' => 'Ken Park', 'role' => 'Title to confirm', 'credentials' => '', 'leadership' => false ),
 );
 $order = 0;
 foreach ( $people as $p ) {
@@ -253,7 +258,9 @@ foreach ( $people as $p ) {
 	$headshot = hkla_seed_image( $p['name'] . ' headshot', 800, 800, 'stone' );
 	update_field( 'role_title', $p['role'], $id );
 	update_field( 'credentials', $p['credentials'], $id );
-	update_field( 'bio', '<p>Hongjoo founded HKLA in 2012. He holds a Master of Landscape Architecture from the Harvard Graduate School of Design and brings nearly three decades of practice to every project.</p>', $id );
+	if ( 'Hongjoo Kim' === $p['name'] ) {
+		update_field( 'bio', '<p>Hongjoo founded HKLA in 2012. He holds a Master of Landscape Architecture from the Harvard Graduate School of Design and brings nearly three decades of practice to every project.</p>', $id );
+	}
 	update_field( 'headshot', $headshot, $id );
 	update_field( 'is_leadership', $p['leadership'], $id );
 }
