@@ -13,7 +13,6 @@ the_post();
 ?>
 <div class="page-shell">
 	<header class="index-header">
-		<p class="eyebrow"><?php esc_html_e( 'Process Oriented Design', 'hkla' ); ?></p>
 		<h1 class="display-l"><?php echo esc_html( hkla_field( 'framing_statement', false, 'Before a line is drawn, we find the story.' ) ); ?></h1>
 		<?php if ( hkla_field( 'framing_body' ) ) : ?>
 			<div class="lede prose"><?php hkla_rich_text( hkla_field( 'framing_body' ) ); ?></div>
@@ -68,6 +67,24 @@ the_post();
 				<?php endif; ?>
 			</figure>
 		<?php endforeach; ?>
+	</section>
+	<?php endif; ?>
+	<?php
+	$commitments = hkla_field( 'commitments', false, array() );
+	if ( $commitments ) :
+	?>
+	<section class="band" aria-labelledby="commitments-heading">
+		<h2 id="commitments-heading" class="eyebrow"><?php esc_html_e( 'How we build', 'hkla' ); ?></h2>
+		<ul class="commitments">
+			<?php foreach ( $commitments as $commitment ) : ?>
+				<li class="commitment reveal">
+					<h3 class="commitment__title display-s"><?php echo esc_html( $commitment['title'] ?? '' ); ?></h3>
+					<?php if ( ! empty( $commitment['body'] ) ) : ?>
+						<div class="prose"><?php hkla_rich_text( $commitment['body'] ); ?></div>
+					<?php endif; ?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
 	</section>
 	<?php endif; ?>
 </div>

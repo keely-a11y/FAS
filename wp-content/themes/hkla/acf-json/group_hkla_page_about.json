@@ -103,63 +103,6 @@
             "rows": 3
         },
         {
-            "key": "field_hkla_about_commitments",
-            "label": "How we build",
-            "name": "commitments",
-            "type": "repeater",
-            "instructions": "Up to four sustainability commitments.",
-            "layout": "block",
-            "max": 4,
-            "button_label": "Add commitment",
-            "sub_fields": [
-                {
-                    "key": "field_hkla_about_commitment_title",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "required": 1
-                },
-                {
-                    "key": "field_hkla_about_commitment_body",
-                    "label": "Body",
-                    "name": "body",
-                    "type": "wysiwyg",
-                    "tabs": "visual",
-                    "toolbar": "hkla_minimal",
-                    "media_upload": 0
-                }
-            ]
-        },
-        {
-            "key": "field_hkla_about_recognition",
-            "label": "Recognition",
-            "name": "recognition",
-            "type": "repeater",
-            "layout": "table",
-            "button_label": "Add item",
-            "sub_fields": [
-                {
-                    "key": "field_hkla_about_recognition_title",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "required": 1
-                },
-                {
-                    "key": "field_hkla_about_recognition_org",
-                    "label": "Organization",
-                    "name": "organization",
-                    "type": "text"
-                },
-                {
-                    "key": "field_hkla_about_recognition_year",
-                    "label": "Year",
-                    "name": "year",
-                    "type": "text"
-                }
-            ]
-        },
-        {
             "key": "field_hkla_about_contact_invitation",
             "label": "Contact invitation",
             "name": "contact_invitation",

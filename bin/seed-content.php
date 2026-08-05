@@ -355,6 +355,17 @@ if ( function_exists( 'update_field' ) ) {
 		$process_id
 	);
 
+	update_field(
+		'commitments',
+		array(
+			array( 'title' => 'Native and drought tolerant planting', 'body' => '<p>Planting that thrives in the climate we are getting, not the one we had.</p>' ),
+			array( 'title' => 'Stormwater and groundwater recharge', 'body' => '<p>Ground that drinks the rain. Stormwater is a resource, not a nuisance.</p>' ),
+			array( 'title' => 'Recycled and local materials', 'body' => '<p>Materials sourced close to home, with second lives built in.</p>' ),
+			array( 'title' => 'Cooling and shade', 'body' => '<p>Design that prevents solar heat gain and gives every visitor somewhere cool to be.</p>' ),
+		),
+		$process_id
+	);
+
 	// About.
 	update_field( 'belief_statement', 'Urban open space is the pinnacle of democratic practice. Everyone, regardless of origin, color, religion, or interest, can be there together.', $about_id );
 	update_field(
@@ -373,25 +384,6 @@ if ( function_exists( 'update_field' ) ) {
 	update_field( 'founder_bio', '<p>Hongjoo founded HKLA in 2012. He holds a Master of Landscape Architecture from the Harvard Graduate School of Design and brings nearly three decades of practice to public work across Southern California.</p>', $about_id );
 	update_field( 'founder_portrait', hkla_seed_image( 'Hongjoo Kim portrait', 1200, 1500, 'stone' ), $about_id );
 	update_field( 'boutique_statement', 'Boutique by design. Small enough that every project gets our best people. Experienced enough that nothing surprises us.', $about_id );
-	update_field(
-		'commitments',
-		array(
-			array( 'title' => 'Native and drought tolerant planting', 'body' => '<p>Planting that thrives in the climate we are getting, not the one we had.</p>' ),
-			array( 'title' => 'Stormwater and groundwater recharge', 'body' => '<p>Ground that drinks the rain. Stormwater is a resource, not a nuisance.</p>' ),
-			array( 'title' => 'Recycled and local materials', 'body' => '<p>Materials sourced close to home, with second lives built in.</p>' ),
-			array( 'title' => 'Cooling and shade', 'body' => '<p>Design that prevents solar heat gain and gives every visitor somewhere cool to be.</p>' ),
-		),
-		$about_id
-	);
-	update_field(
-		'recognition',
-		array(
-			array( 'title' => 'DBDA National Award', 'organization' => 'UCR Student Success Center', 'year' => '2022' ),
-			array( 'title' => 'Campus Master Landscape Architect', 'organization' => 'CSU Dominguez Hills', 'year' => 'Since 2018' ),
-			array( 'title' => 'Little Saigon Streetscape Feasibility Study', 'organization' => 'City of Westminster', 'year' => '' ),
-		),
-		$about_id
-	);
 	update_field( 'contact_invitation', 'Every client works directly with our senior team.', $about_id );
 
 	// Contact.

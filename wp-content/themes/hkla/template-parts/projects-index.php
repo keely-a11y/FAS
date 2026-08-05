@@ -16,7 +16,6 @@ $sectors      = get_terms(
 ?>
 <div class="page-shell">
 	<header class="index-header">
-		<p class="eyebrow"><?php esc_html_e( 'Projects', 'hkla' ); ?></p>
 		<h1 class="display-l"><?php esc_html_e( 'Public places with stories to tell.', 'hkla' ); ?></h1>
 	</header>
 

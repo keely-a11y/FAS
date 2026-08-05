@@ -468,8 +468,6 @@ button {
    -------------------------------------------------------------------------- */
 .filter {
   margin-bottom: var(--space-4);
-  border-block: 1px solid var(--color-stone);
-  padding-block: var(--space-1);
 }
 
 .filter__list {
@@ -971,7 +969,6 @@ button {
 }
 
 .band--statement {
-  border-block: 1px solid var(--color-stone);
   padding-block: var(--space-5);
 }
 
