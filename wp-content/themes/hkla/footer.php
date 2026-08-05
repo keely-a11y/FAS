@@ -26,8 +26,7 @@
 			</div>
 			<nav class="site-footer__col site-footer__nav" aria-label="<?php esc_attr_e( 'Footer', 'hkla' ); ?>">
 				<ul>
-					<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About', 'hkla' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>"><?php esc_html_e( 'News', 'hkla' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/careers/' ) ); ?>"><?php esc_html_e( 'Careers', 'hkla' ); ?></a></li>
 					<?php if ( hkla_setting( 'instagram_url' ) ) : ?>
 						<li><a href="<?php echo esc_url( hkla_setting( 'instagram_url' ) ); ?>" rel="noopener"><?php esc_html_e( 'Instagram', 'hkla' ); ?></a></li>
 					<?php endif; ?>

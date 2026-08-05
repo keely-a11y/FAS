@@ -12,8 +12,7 @@ the_post();
 ?>
 <div class="page-shell">
 	<header class="index-header">
-		<p class="eyebrow"><?php esc_html_e( 'Contact', 'hkla' ); ?></p>
-		<h1 class="display-l"><?php echo esc_html( hkla_field( 'statement', false, 'Every client works directly with our senior team.' ) ); ?></h1>
+		<h1 class="visually-hidden"><?php esc_html_e( 'Contact', 'hkla' ); ?></h1>
 	</header>
 
 	<div class="contact-layout">
@@ -39,8 +38,23 @@ the_post();
 					<li><a href="<?php echo esc_url( hkla_setting( 'linkedin_url' ) ); ?>" rel="noopener"><?php esc_html_e( 'LinkedIn', 'hkla' ); ?></a></li>
 				<?php endif; ?>
 			</ul>
+			<?php if ( hkla_setting( 'rfp_email' ) ) : ?>
+				<p class="caption"><?php esc_html_e( 'RFPs and proposal requests:', 'hkla' ); ?> <a href="mailto:<?php echo esc_attr( hkla_setting( 'rfp_email' ) ); ?>"><?php echo esc_html( hkla_setting( 'rfp_email' ) ); ?></a></p>
+			<?php endif; ?>
 		</aside>
 	</div>
+
+	<section class="band" aria-labelledby="contact-careers-heading">
+		<h2 id="contact-careers-heading" class="eyebrow"><?php esc_html_e( 'Careers', 'hkla' ); ?></h2>
+		<p class="lede"><?php esc_html_e( 'Want to build shared places with us?', 'hkla' ); ?> <a class="text-link" href="<?php echo esc_url( home_url( '/careers/' ) ); ?>"><?php esc_html_e( 'See open roles', 'hkla' ); ?></a></p>
+	</section>
+
+	<?php if ( hkla_setting( 'press_email' ) ) : ?>
+	<section class="band" aria-labelledby="contact-press-heading">
+		<h2 id="contact-press-heading" class="eyebrow"><?php esc_html_e( 'Press', 'hkla' ); ?></h2>
+		<p class="lede"><a href="mailto:<?php echo esc_attr( hkla_setting( 'press_email' ) ); ?>"><?php echo esc_html( hkla_setting( 'press_email' ) ); ?></a></p>
+	</section>
+	<?php endif; ?>
 </div>
 <?php
 get_footer();

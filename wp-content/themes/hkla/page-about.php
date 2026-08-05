@@ -2,8 +2,8 @@
 /**
  * Template Name: About
  *
- * The studio in one page: approach, founder, team, commitments,
- * recognition, open roles, contact invitation.
+ * Four blocks only, per the brief: purpose statement, studio narrative,
+ * founder feature, team grid.
  *
  * @package hkla
  */
@@ -13,41 +13,15 @@ the_post();
 ?>
 <div class="page-shell">
 	<header class="index-header">
-		<h1 class="display-l"><?php echo esc_html( hkla_field( 'framing_statement', false, 'Harmony between people and nature.' ) ); ?></h1>
-		<?php if ( hkla_field( 'approach_body' ) ) : ?>
-			<div class="lede prose"><?php hkla_rich_text( hkla_field( 'approach_body' ) ); ?></div>
+		<h1 class="display-l"><?php echo esc_html( hkla_field( 'purpose_headline', false, 'Design as a civic act.' ) ); ?></h1>
+		<?php if ( hkla_field( 'purpose_body' ) ) : ?>
+			<div class="lede prose"><?php hkla_rich_text( hkla_field( 'purpose_body' ) ); ?></div>
 		<?php endif; ?>
 	</header>
-</div>
 
-<?php if ( hkla_field( 'belief_statement' ) ) : ?>
-<section class="band band--statement reveal">
-	<p class="display-m"><?php echo esc_html( hkla_field( 'belief_statement' ) ); ?></p>
-</section>
-<?php endif; ?>
-
-<div class="page-shell">
-	<?php
-	$principles = hkla_field( 'principles', false, array() );
-	if ( $principles ) :
-	?>
-	<section aria-labelledby="principles-heading">
-		<h2 id="principles-heading" class="eyebrow"><?php esc_html_e( 'Three principles', 'hkla' ); ?></h2>
-		<ol class="principles">
-			<?php foreach ( $principles as $principle ) : ?>
-				<li class="principle reveal">
-					<?php if ( ! empty( $principle['image'] ) ) : ?>
-						<figure class="principle__media"><?php hkla_image( $principle['image'], 'hkla-half' ); ?></figure>
-					<?php else : ?>
-						<div class="principle__media principle__media--empty" aria-hidden="true"></div>
-					<?php endif; ?>
-					<h3 class="principle__title display-s"><?php echo esc_html( $principle['title'] ?? '' ); ?></h3>
-					<?php if ( ! empty( $principle['body'] ) ) : ?>
-						<div class="prose"><?php hkla_rich_text( $principle['body'] ); ?></div>
-					<?php endif; ?>
-				</li>
-			<?php endforeach; ?>
-		</ol>
+	<?php if ( hkla_field( 'studio_narrative' ) ) : ?>
+	<section class="band section--text reveal" aria-label="<?php esc_attr_e( 'The studio', 'hkla' ); ?>">
+		<div class="prose"><?php hkla_rich_text( hkla_field( 'studio_narrative' ) ); ?></div>
 	</section>
 	<?php endif; ?>
 
@@ -93,6 +67,8 @@ the_post();
 						<figure class="person__headshot">
 							<?php hkla_image( hkla_field( 'headshot', $person->ID ), 'hkla-headshot', array( 'sizes' => '(min-width: 800px) 25vw, 50vw' ) ); ?>
 						</figure>
+					<?php else : ?>
+						<div class="person__headshot person__headshot--empty" aria-hidden="true"></div>
 					<?php endif; ?>
 					<h3 class="person__name"><?php echo esc_html( get_the_title( $person ) ); ?></h3>
 					<p class="person__role utility">
@@ -109,38 +85,6 @@ the_post();
 		</ul>
 	</section>
 	<?php endif; ?>
-</div>
-
-<section class="band band--statement reveal">
-	<p class="display-m"><?php echo esc_html( hkla_field( 'boutique_statement', false, 'Boutique by design. Small enough that every project gets our best people. Experienced enough that nothing surprises us.' ) ); ?></p>
-</section>
-
-<div class="page-shell">
-	<?php
-	$roles = hkla_setting( 'open_roles', array() );
-	if ( $roles ) :
-	?>
-	<section class="band" aria-labelledby="roles-heading">
-		<h2 id="roles-heading" class="eyebrow"><?php esc_html_e( 'Open roles', 'hkla' ); ?></h2>
-		<ul class="roles">
-			<?php foreach ( $roles as $role ) : ?>
-				<li class="role reveal">
-					<h3 class="role__title display-s"><?php echo esc_html( $role['role_title'] ?? '' ); ?></h3>
-					<p class="role__meta utility">
-						<?php echo esc_html( trim( ( $role['role_type'] ?? '' ) . ' · ' . ( $role['role_location'] ?? '' ), ' ·' ) ); ?>
-					</p>
-					<?php if ( ! empty( $role['description'] ) ) : ?>
-						<div class="prose"><?php hkla_rich_text( $role['description'] ); ?></div>
-					<?php endif; ?>
-					<?php if ( ! empty( $role['apply_link'] ) ) : ?>
-						<p><a class="text-link" href="<?php echo esc_url( $role['apply_link'] ); ?>"><?php esc_html_e( 'Apply for this role', 'hkla' ); ?></a></p>
-					<?php endif; ?>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-	</section>
-	<?php endif; ?>
-
 </div>
 <?php
 get_footer();

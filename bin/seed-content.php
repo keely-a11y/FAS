@@ -109,6 +109,7 @@ $process_id = hkla_seed_page( 'Process', 'process', 'page-process.php' );
 $about_id   = hkla_seed_page( 'About', 'about', 'page-about.php' );
 $contact_id = hkla_seed_page( 'Contact', 'contact', 'page-contact.php' );
 $news_id    = hkla_seed_page( 'News', 'news' );
+$careers_id = hkla_seed_page( 'Careers', 'careers', 'page-careers.php' );
 
 update_option( 'show_on_front', 'page' );
 update_option( 'page_on_front', $home_id );
@@ -200,7 +201,10 @@ foreach ( $projects as $data ) {
 		update_field( 'story_headline', $data['headline'], $id );
 		update_field( 'story_intro', $data['intro'], $id );
 		update_field( 'hero_image', $hero_id, $id );
-		update_field( 'hero_image_2', $wide_id, $id );
+		update_field( 'hero_layout', ( 'Vermont Miracle Park' === $data['title'] ) ? 'pair' : 'single', $id );
+		if ( 'Vermont Miracle Park' === $data['title'] ) {
+			update_field( 'hero_pair_image', $sketch_id, $id );
+		}
 		foreach ( $data['facts'] as $key => $value ) {
 			update_field( $key, $value, $id );
 		}
@@ -271,6 +275,17 @@ if ( function_exists( 'update_field' ) ) {
 	update_field( 'address', "714 West Olympic Blvd, Suite 735\nLos Angeles, CA 90015", 'option' );
 	update_field( 'email', 'info@hklainc.com', 'option' );
 	update_field( 'footer_line', 'Shared spaces. Shared stories.', 'option' );
+	update_field( 'phone', '(213) 293-3474', 'option' );
+	update_field( 'press_email', 'press@hklainc.com', 'option' );
+	update_field(
+		'recognition',
+		array(
+			array( 'award_title' => 'DBDA National Award', 'organization' => 'Downtown Breakfast Club Design Awards', 'year' => '2022' ),
+			array( 'award_title' => 'Campus Master Landscape Architect', 'organization' => 'CSU Dominguez Hills', 'year' => 'Since 2018' ),
+			array( 'award_title' => 'Little Saigon Streetscape Feasibility Study', 'organization' => 'City of Westminster', 'year' => '' ),
+		),
+		'option'
+	);
 
 	// Home.
 	$project_ids = get_posts(
@@ -281,31 +296,20 @@ if ( function_exists( 'update_field' ) ) {
 		)
 	);
 	update_field( 'hero_image', hkla_seed_image( 'Home hero', 2400, 1500, 'moss' ), $home_id );
+	update_field(
+		'hero_slides',
+		array_filter(
+			array(
+				hkla_seed_image( 'Home hero', 2400, 1500, 'moss' ),
+				hkla_seed_image( 'Home slide two', 2400, 1500, 'earth' ),
+				hkla_seed_image( 'Home slide three', 2400, 1500, 'stone' ),
+			)
+		),
+		$home_id
+	);
 	update_field( 'hero_line', 'Shared spaces. Shared stories.', $home_id );
 	update_field( 'mission_statement', 'HKLA is a civic landscape specialist. Grounded in storytelling and a commitment to community, we shape environments for a shared and sustainable future.', $home_id );
 	update_field( 'featured_projects', $project_ids, $home_id );
-	update_field( 'process_sketch', hkla_seed_image( 'Process sketch', 1600, 1100, 'paper' ), $home_id );
-	update_field( 'process_photo', hkla_seed_image( 'Process photo', 1600, 1100, 'moss' ), $home_id );
-	update_field( 'process_caption', 'Every project begins as a drawing. The hand finds what the survey cannot.', $home_id );
-	update_field(
-		'stats',
-		array(
-			array( 'value' => '2012', 'label' => 'Practicing since' ),
-			array( 'value' => '345', 'label' => 'Acres as CSUDH campus landscape architect' ),
-			array( 'value' => '5', 'label' => 'Sectors served' ),
-		),
-		$home_id
-	);
-	update_field(
-		'recognition',
-		array(
-			array( 'name' => 'DBDA National Award 2022' ),
-			array( 'name' => 'ASLA' ),
-			array( 'name' => 'CSUDH Campus Master Landscape Architect' ),
-		),
-		$home_id
-	);
-	update_field( 'contact_invitation', 'Every client works directly with our senior team.', $home_id );
 
 	// Process (POD).
 	update_field( 'framing_statement', 'Before a line is drawn, we find the story.', $process_id );
@@ -366,35 +370,46 @@ if ( function_exists( 'update_field' ) ) {
 		$process_id
 	);
 
-	// About.
-	update_field( 'belief_statement', 'Urban open space is the pinnacle of democratic practice. Everyone, regardless of origin, color, religion, or interest, can be there together.', $about_id );
-	update_field(
-		'principles',
-		array(
-			array( 'title' => 'Collaborative design', 'body' => '<p>The best ideas come from the table with the most seats. Community, client, and collaborators shape the work with us.</p>' ),
-			array( 'title' => 'Landscape as art, in context', 'body' => '<p>Every site has a story worth telling. We read the context first and let the art grow out of it.</p>' ),
-			array( 'title' => 'Innovative urban ecology', 'body' => '<p>Native planting, stormwater as a resource, materials with second lives. Ecology is a design tool, not a checkbox.</p>' ),
-		),
-		$about_id
-	);
-	update_field( 'framing_statement', 'Harmony between people and nature.', $about_id );
-	update_field( 'approach_body', '<p>HKLA is a full service landscape architecture practice in Los Angeles, founded in 2012. Three principles guide the work: collaborative design, contextual exploration of landscape as art, and innovative urban ecology. The goal is simple: harmony between people and nature.</p>', $about_id );
+	// About: four blocks per the brief.
+	update_field( 'purpose_headline', 'Design as a civic act.', $about_id );
+	update_field( 'purpose_body', '<p>We believe urban open space is the pinnacle of democratic practice. Everyone, regardless of origin, color, religion, or interest, can be there together.</p>', $about_id );
+	update_field( 'studio_narrative', '<p>HKLA is a full service landscape architecture practice in Los Angeles, founded in 2012. Three principles guide the work: collaborative design, contextual exploration of landscape as art, and innovative urban ecology. The goal is simple: harmony between people and nature.</p><p>Boutique by design. Small enough that every project gets our best people. Experienced enough that nothing surprises us.</p>', $about_id );
 	update_field( 'founder_name', 'Hongjoo Kim', $about_id );
 	update_field( 'founder_title', 'Founding Principal, ASLA', $about_id );
 	update_field( 'founder_bio', '<p>Hongjoo founded HKLA in 2012. He holds a Master of Landscape Architecture from the Harvard Graduate School of Design and brings nearly three decades of practice to public work across Southern California.</p>', $about_id );
 	update_field( 'founder_portrait', hkla_seed_image( 'Hongjoo Kim portrait', 1200, 1500, 'stone' ), $about_id );
-	update_field( 'boutique_statement', 'Boutique by design. Small enough that every project gets our best people. Experienced enough that nothing surprises us.', $about_id );
-	update_field( 'contact_invitation', 'Every client works directly with our senior team.', $about_id );
+
+	// Careers.
+	update_field( 'culture_headline', 'Work on places people share.', $careers_id );
+	update_field( 'culture_body', '<p>We are a small studio doing civic work at civic scale. Every person here shapes real public places.</p>', $careers_id );
+	update_field(
+		'open_roles',
+		array(
+			array(
+				'role_title'    => 'Landscape Designer',
+				'role_type'     => 'Full time',
+				'role_location' => 'Los Angeles',
+				'description'   => '<p>Placeholder role. Real listings come from HKLA.</p>',
+				'apply_link'    => 'mailto:careers@hklainc.com',
+			),
+		),
+		$careers_id
+	);
+	update_field( 'apply_email', 'careers@hklainc.com', $careers_id );
+	update_field( 'apply_note', '<p>No open role that fits? Send a portfolio anyway. We read every speculative application.</p>', $careers_id );
 
 	// Contact.
 	update_field( 'statement', 'Every client works directly with our senior team.', $contact_id );
 }
 
 WP_CLI::log( 'Seeding news entries...' );
+foreach ( array( 'News', 'Awards', 'Press', 'Ideas' ) as $cat_name ) {
+	wp_create_category( $cat_name );
+}
 $news_items = array(
 	array(
 		'title'    => 'UCR Student Success Center wins a DBDA National Award',
-		'category' => 'Recognition',
+		'category' => 'Awards',
 		'date'     => '2022-06-15 09:00:00',
 		'excerpt'  => 'The campus landscape that makes the new center belong to Riverside earns national recognition.',
 		'image'    => 'UCR Student Success Center hero',

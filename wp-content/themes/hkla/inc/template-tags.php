@@ -78,7 +78,7 @@ function hkla_primary_nav() {
 		'Projects' => get_post_type_archive_link( 'project' ),
 		'Process'  => home_url( '/process/' ),
 		'About'    => home_url( '/about/' ),
-		'News'     => home_url( '/news/' ),
+		'News + Ideas' => home_url( '/news/' ),
 		'Contact'  => home_url( '/contact/' ),
 	);
 	echo '<ul class="nav__list">';

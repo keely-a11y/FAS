@@ -30,6 +30,12 @@
             "instructions": "RFP inquiries from the contact form go here. Left empty, they go to the main email."
         },
         {
+            "key": "field_hkla_settings_press_email",
+            "label": "Press email",
+            "name": "press_email",
+            "type": "email"
+        },
+        {
             "key": "field_hkla_set_instagram",
             "label": "Instagram URL",
             "name": "instagram_url",
@@ -49,62 +55,6 @@
             "default_value": "Shared spaces. Shared stories."
         },
         {
-            "key": "field_hkla_set_careers_intro",
-            "label": "Careers intro",
-            "name": "careers_intro",
-            "type": "wysiwyg",
-            "tabs": "visual",
-            "toolbar": "hkla_minimal",
-            "media_upload": 0
-        },
-        {
-            "key": "field_hkla_set_open_roles",
-            "label": "Open roles",
-            "name": "open_roles",
-            "type": "repeater",
-            "layout": "block",
-            "button_label": "Add role",
-            "sub_fields": [
-                {
-                    "key": "field_hkla_role_title",
-                    "label": "Role title",
-                    "name": "role_title",
-                    "type": "text",
-                    "required": 1
-                },
-                {
-                    "key": "field_hkla_role_type",
-                    "label": "Type",
-                    "name": "role_type",
-                    "type": "text",
-                    "instructions": "Example: Full time"
-                },
-                {
-                    "key": "field_hkla_role_location",
-                    "label": "Location",
-                    "name": "role_location",
-                    "type": "text",
-                    "instructions": "Example: Los Angeles"
-                },
-                {
-                    "key": "field_hkla_role_description",
-                    "label": "Description",
-                    "name": "description",
-                    "type": "wysiwyg",
-                    "tabs": "visual",
-                    "toolbar": "hkla_minimal",
-                    "media_upload": 0
-                },
-                {
-                    "key": "field_hkla_role_apply_link",
-                    "label": "Apply link",
-                    "name": "apply_link",
-                    "type": "url",
-                    "instructions": "A mailto: link or application URL."
-                }
-            ]
-        },
-        {
             "key": "field_hkla_set_og_image",
             "label": "Default social share image",
             "name": "default_og_image",
@@ -119,6 +69,47 @@
             "name": "contact_form_shortcode",
             "type": "text",
             "instructions": "Optional, admin use. A WPForms or Gravity Forms shortcode to replace the built-in contact form."
+        },
+        {
+            "key": "field_hkla_settings_recognition",
+            "label": "Recognition index",
+            "name": "recognition",
+            "type": "repeater",
+            "instructions": "Awards by year, shown on the News + Ideas page.",
+            "layout": "table",
+            "button_label": "Add award",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_settings_rec_title",
+                    "label": "Award title",
+                    "name": "award_title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hkla_settings_rec_org",
+                    "label": "Organization",
+                    "name": "organization",
+                    "type": "text"
+                },
+                {
+                    "key": "field_hkla_settings_rec_year",
+                    "label": "Year",
+                    "name": "year",
+                    "type": "text"
+                },
+                {
+                    "key": "field_hkla_settings_rec_project",
+                    "label": "Project",
+                    "name": "project",
+                    "type": "post_object",
+                    "post_type": [
+                        "project"
+                    ],
+                    "allow_null": 1,
+                    "return_format": "id"
+                }
+            ]
         }
     ],
     "location": [

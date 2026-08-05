@@ -23,6 +23,18 @@
             "media_upload": 0
         },
         {
+            "key": "field_hkla_project_hero_layout",
+            "label": "Hero layout",
+            "name": "hero_layout",
+            "type": "select",
+            "choices": {
+                "single": "Single photograph",
+                "pair": "Pair: story artifact + photograph"
+            },
+            "default_value": "single",
+            "return_format": "value"
+        },
+        {
             "key": "field_hkla_hero_image",
             "label": "Hero image",
             "name": "hero_image",
@@ -35,11 +47,11 @@
             "mime_types": "jpg,jpeg,png,webp,avif"
         },
         {
-            "key": "field_hkla_project_hero_image_2",
-            "label": "Hero: second image (optional)",
-            "name": "hero_image_2",
+            "key": "field_hkla_project_hero_pair",
+            "label": "Hero: pair image",
+            "name": "hero_pair_image",
             "type": "image",
-            "instructions": "With two images the hero splits side by side, like the reference design. Ignored when a hero video is set.",
+            "instructions": "The story artifact half: sketch, artwork, diagram, site data. Used when Hero layout is pair.",
             "return_format": "array",
             "preview_size": "medium"
         },

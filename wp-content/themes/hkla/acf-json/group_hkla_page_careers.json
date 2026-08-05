@@ -1,0 +1,99 @@
+{
+    "key": "group_hkla_page_careers",
+    "title": "Careers page",
+    "fields": [
+        {
+            "key": "field_hkla_careers_headline",
+            "label": "Culture headline",
+            "name": "culture_headline",
+            "type": "text",
+            "default_value": "Work on places people share."
+        },
+        {
+            "key": "field_hkla_careers_body",
+            "label": "Culture body",
+            "name": "culture_body",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "hkla_minimal",
+            "media_upload": 0
+        },
+        {
+            "key": "field_hkla_careers_roles",
+            "label": "Open roles",
+            "name": "open_roles",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add role",
+            "sub_fields": [
+                {
+                    "key": "field_hkla_careers_role_title",
+                    "label": "Role title",
+                    "name": "role_title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hkla_careers_role_type",
+                    "label": "Type",
+                    "name": "role_type",
+                    "type": "text",
+                    "instructions": "e.g. Full time"
+                },
+                {
+                    "key": "field_hkla_careers_role_location",
+                    "label": "Location",
+                    "name": "role_location",
+                    "type": "text"
+                },
+                {
+                    "key": "field_hkla_careers_role_desc",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "wysiwyg",
+                    "tabs": "visual",
+                    "toolbar": "hkla_minimal",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_hkla_careers_role_link",
+                    "label": "Apply link",
+                    "name": "apply_link",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_hkla_careers_apply_email",
+            "label": "Apply email",
+            "name": "apply_email",
+            "type": "email"
+        },
+        {
+            "key": "field_hkla_careers_apply_note",
+            "label": "Apply note",
+            "name": "apply_note",
+            "type": "wysiwyg",
+            "instructions": "How to apply, including speculative applications.",
+            "tabs": "visual",
+            "toolbar": "hkla_minimal",
+            "media_upload": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-careers.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

@@ -17,10 +17,13 @@ $location   = hkla_field( 'location', get_the_ID() );
 
 <article class="project">
 
-	<?php $hero_image_2 = hkla_field( 'hero_image_2', get_the_ID() ); ?>
+	<?php
+	$hero_layout = hkla_field( 'hero_layout', get_the_ID(), 'single' );
+	$hero_pair   = ( 'pair' === $hero_layout ) ? hkla_field( 'hero_pair_image', get_the_ID() ) : null;
+	?>
 	<header class="project-hero">
 		<h1 class="visually-hidden"><?php the_title(); ?></h1>
-		<div class="project-hero__media<?php echo ( $hero_image && $hero_image_2 ) ? ' project-hero__media--pair' : ''; ?>">
+		<div class="project-hero__media<?php echo ( $hero_image && $hero_pair ) ? ' project-hero__media--pair' : ''; ?>">
 			<?php if ( $hero_video ) : ?>
 				<video autoplay muted loop playsinline preload="metadata"
 					<?php if ( $hero_image ) : ?>poster="<?php echo esc_url( is_array( $hero_image ) ? $hero_image['sizes']['hkla-wide'] ?? $hero_image['url'] : wp_get_attachment_image_url( $hero_image, 'hkla-wide' ) ); ?>"<?php endif; ?>>
@@ -29,8 +32,8 @@ $location   = hkla_field( 'location', get_the_ID() );
 			<?php elseif ( $hero_image ) : ?>
 				<?php hkla_hero_image( $hero_image, 'hkla-hero', '' ); ?>
 			<?php endif; ?>
-			<?php if ( $hero_image_2 && ! $hero_video ) : ?>
-				<?php hkla_hero_image( $hero_image_2, 'hkla-hero', '' ); ?>
+			<?php if ( $hero_pair && ! $hero_video ) : ?>
+				<?php hkla_hero_image( $hero_pair, 'hkla-hero', '' ); ?>
 			<?php endif; ?>
 		</div>
 	</header>
@@ -51,19 +54,22 @@ $location   = hkla_field( 'location', get_the_ID() );
 		__( 'Services', 'hkla' )   => hkla_field( 'services', get_the_ID() ),
 	);
 	$facts = array_filter( $facts );
-	if ( $facts ) :
 	?>
-	<section class="facts-bar" aria-label="<?php esc_attr_e( 'Project facts', 'hkla' ); ?>">
-		<dl class="facts-bar__list">
-			<?php foreach ( $facts as $label => $value ) : ?>
-				<div class="facts-bar__item">
-					<dt><?php echo esc_html( $label ); ?></dt>
-					<dd><?php echo esc_html( $value ); ?></dd>
-				</div>
-			<?php endforeach; ?>
-		</dl>
-	</section>
-	<?php endif; ?>
+	<div class="project-layout">
+		<?php if ( $facts ) : ?>
+		<aside class="facts-rail" aria-label="<?php esc_attr_e( 'Project facts', 'hkla' ); ?>">
+			<dl>
+				<?php foreach ( $facts as $label => $value ) : ?>
+					<div class="facts-rail__item">
+						<dt class="utility"><?php echo esc_html( $label ); ?></dt>
+						<dd><?php echo esc_html( $value ); ?></dd>
+					</div>
+				<?php endforeach; ?>
+			</dl>
+		</aside>
+		<?php endif; ?>
+
+		<div class="project-layout__content">
 
 	<?php
 	// Flexible narrative sections.
@@ -74,29 +80,8 @@ $location   = hkla_field( 'location', get_the_ID() );
 		endwhile;
 	endif;
 	?>
-
-	<?php
-	$impact_summary = hkla_field( 'impact_summary', get_the_ID() );
-	$impact_metrics = hkla_field( 'impact_metrics', get_the_ID(), array() );
-	if ( $impact_summary || $impact_metrics ) :
-	?>
-	<section class="band band--impact reveal" aria-labelledby="impact-heading">
-		<h2 id="impact-heading" class="eyebrow"><?php esc_html_e( 'Impact', 'hkla' ); ?></h2>
-		<?php if ( $impact_summary ) : ?>
-			<p class="display-s"><?php echo esc_html( $impact_summary ); ?></p>
-		<?php endif; ?>
-		<?php if ( $impact_metrics ) : ?>
-			<dl class="stat-band">
-				<?php foreach ( $impact_metrics as $metric ) : ?>
-					<div class="stat">
-						<dt class="stat__label"><?php echo esc_html( $metric['label'] ?? '' ); ?></dt>
-						<dd class="stat__value display-m"><?php echo esc_html( $metric['value'] ?? '' ); ?></dd>
-					</div>
-				<?php endforeach; ?>
-			</dl>
-		<?php endif; ?>
-	</section>
-	<?php endif; ?>
+		</div>
+	</div>
 
 	<?php
 	$collaborators = hkla_field( 'collaborators', get_the_ID(), array() );

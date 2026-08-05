@@ -19,7 +19,6 @@ function hkla_legacy_redirects() {
 			'/journal'           => '/news/',
 			'/people'            => '/about/',
 			'/purpose'           => '/about/',
-			'/careers'           => '/about/',
 		)
 	);
 

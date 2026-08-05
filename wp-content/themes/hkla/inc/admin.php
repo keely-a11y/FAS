@@ -35,22 +35,22 @@ function hkla_rename_posts_menu() {
 	if ( isset( $menu ) ) {
 		foreach ( $menu as $key => $item ) {
 			if ( 'edit.php' === ( $item[2] ?? '' ) ) {
-				$menu[ $key ][0] = __( 'News', 'hkla' );
+				$menu[ $key ][0] = __( 'News + Ideas', 'hkla' );
 			}
 		}
 	}
 	if ( isset( $submenu['edit.php'][5] ) ) {
-		$submenu['edit.php'][5][0] = __( 'All News Entries', 'hkla' );
+		$submenu['edit.php'][5][0] = __( 'All News + Ideas', 'hkla' );
 	}
 }
 add_action( 'admin_menu', 'hkla_rename_posts_menu' );
 
 function hkla_rename_posts_labels( $labels ) {
-	$labels->name          = __( 'News', 'hkla' );
+	$labels->name          = __( 'News + Ideas', 'hkla' );
 	$labels->singular_name = __( 'News Entry', 'hkla' );
 	$labels->add_new_item  = __( 'Add New News Entry', 'hkla' );
 	$labels->edit_item     = __( 'Edit News Entry', 'hkla' );
-	$labels->menu_name     = __( 'News', 'hkla' );
+	$labels->menu_name     = __( 'News + Ideas', 'hkla' );
 	return $labels;
 }
 add_filter( 'post_type_labels_post', 'hkla_rename_posts_labels' );

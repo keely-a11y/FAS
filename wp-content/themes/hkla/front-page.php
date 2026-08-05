@@ -8,6 +8,7 @@
 get_header();
 
 $hero_image   = hkla_field( 'hero_image' );
+$hero_slides  = hkla_field( 'hero_slides', false, array() );
 $hero_video   = hkla_field( 'hero_video' );
 $hero_line    = hkla_field( 'hero_line', false, 'Shared spaces. Shared stories.' );
 $mission      = hkla_field( 'mission_statement', false, 'HKLA is a civic landscape specialist. Grounded in storytelling and a commitment to community, we shape environments for a shared and sustainable future.' );
@@ -20,6 +21,12 @@ $featured     = hkla_field( 'featured_projects', false, array() );
 			<?php if ( $hero_image ) : ?>poster="<?php echo esc_url( is_array( $hero_image ) ? $hero_image['sizes']['hkla-wide'] ?? $hero_image['url'] : '' ); ?>"<?php endif; ?>>
 			<source src="<?php echo esc_url( $hero_video ); ?>" type="video/mp4">
 		</video>
+	<?php elseif ( $hero_slides && count( $hero_slides ) > 1 ) : ?>
+		<div class="hero__slides" aria-hidden="true">
+			<?php foreach ( $hero_slides as $i => $slide ) : ?>
+				<?php hkla_hero_image( $slide, 'hkla-hero', 'hero__slide' . ( 0 === $i ? ' is-current' : '' ) ); ?>
+			<?php endforeach; ?>
+		</div>
 	<?php elseif ( $hero_image ) : ?>
 		<?php hkla_hero_image( $hero_image, 'hkla-hero', 'hero__media' ); ?>
 	<?php endif; ?>
@@ -52,40 +59,7 @@ $featured     = hkla_field( 'featured_projects', false, array() );
 <?php endif; ?>
 
 
-<?php
-$quote_text = hkla_field( 'quote_text' );
-if ( $quote_text ) :
-?>
-<section class="band band--quote reveal">
-	<blockquote class="voice">
-		<p class="voice__quote display-s">&ldquo;<?php echo esc_html( $quote_text ); ?>&rdquo;</p>
-		<?php if ( hkla_field( 'quote_name' ) ) : ?>
-			<footer class="voice__attribution">
-				<span class="voice__name"><?php echo esc_html( hkla_field( 'quote_name' ) ); ?></span>
-				<?php if ( hkla_field( 'quote_role' ) ) : ?>
-					<span class="voice__role"><?php echo esc_html( hkla_field( 'quote_role' ) ); ?></span>
-				<?php endif; ?>
-			</footer>
-		<?php endif; ?>
-	</blockquote>
-</section>
-<?php endif; ?>
 
-
-
-<?php
-$recognition = hkla_field( 'recognition', false, array() );
-if ( $recognition ) :
-?>
-<section class="band band--recognition" aria-labelledby="recognition-heading">
-	<h2 id="recognition-heading" class="eyebrow"><?php esc_html_e( 'Recognition', 'hkla' ); ?></h2>
-	<ul class="recognition-strip">
-		<?php foreach ( $recognition as $item ) : ?>
-			<li><?php echo esc_html( $item['name'] ?? '' ); ?></li>
-		<?php endforeach; ?>
-	</ul>
-</section>
-<?php endif; ?>
 
 
 <?php

@@ -3,66 +3,30 @@
     "title": "About page",
     "fields": [
         {
-            "key": "field_hkla_about_framing",
-            "label": "Framing statement",
-            "name": "framing_statement",
+            "key": "field_hkla_about_purpose_headline",
+            "label": "Purpose headline",
+            "name": "purpose_headline",
             "type": "text",
-            "default_value": "Harmony between people and nature."
+            "default_value": "Design as a civic act."
         },
         {
-            "key": "field_hkla_about_approach",
-            "label": "Approach",
-            "name": "approach_body",
+            "key": "field_hkla_about_purpose_body",
+            "label": "Purpose body",
+            "name": "purpose_body",
             "type": "wysiwyg",
-            "instructions": "Who HKLA is and how the studio works. 1 to 2 short paragraphs.",
             "tabs": "visual",
             "toolbar": "hkla_minimal",
             "media_upload": 0
         },
         {
-            "key": "field_hkla_about_belief",
-            "label": "Belief statement",
-            "name": "belief_statement",
-            "type": "textarea",
-            "rows": 3,
-            "instructions": "The big ink-band statement. One or two sentences.",
-            "default_value": "Urban open space is the pinnacle of democratic practice. Everyone, regardless of origin, color, religion, or interest, can be there together."
-        },
-        {
-            "key": "field_hkla_about_principles",
-            "label": "Three principles",
-            "name": "principles",
-            "type": "repeater",
-            "layout": "block",
-            "max": 3,
-            "button_label": "Add principle",
-            "sub_fields": [
-                {
-                    "key": "field_hkla_about_principle_image",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "Optional. Without one, a palette tone block appears.",
-                    "return_format": "array",
-                    "preview_size": "medium"
-                },
-                {
-                    "key": "field_hkla_about_principle_title",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "required": 1
-                },
-                {
-                    "key": "field_hkla_about_principle_body",
-                    "label": "Body",
-                    "name": "body",
-                    "type": "wysiwyg",
-                    "tabs": "visual",
-                    "toolbar": "hkla_minimal",
-                    "media_upload": 0
-                }
-            ]
+            "key": "field_hkla_about_studio_narrative",
+            "label": "Studio narrative",
+            "name": "studio_narrative",
+            "type": "wysiwyg",
+            "instructions": "The studio story: who HKLA is, how it works, what it believes.",
+            "tabs": "visual",
+            "toolbar": "hkla_minimal",
+            "media_upload": 0
         },
         {
             "key": "field_hkla_about_founder_name",
@@ -94,20 +58,6 @@
             "type": "image",
             "return_format": "array",
             "preview_size": "medium"
-        },
-        {
-            "key": "field_hkla_about_boutique",
-            "label": "Boutique statement",
-            "name": "boutique_statement",
-            "type": "textarea",
-            "rows": 3
-        },
-        {
-            "key": "field_hkla_about_contact_invitation",
-            "label": "Contact invitation",
-            "name": "contact_invitation",
-            "type": "text",
-            "default_value": "Every client works directly with our senior team."
         }
     ],
     "location": [

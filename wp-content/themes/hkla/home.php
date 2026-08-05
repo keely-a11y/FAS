@@ -27,6 +27,21 @@ function hkla_news_meta( $post_id ) {
 		<h1 class="display-l"><?php esc_html_e( 'Awards and Press', 'hkla' ); ?></h1>
 	</header>
 
+	<?php
+	$news_cats = get_categories( array( 'hide_empty' => false ) );
+	if ( $news_cats ) :
+	?>
+	<nav class="filter" aria-label="<?php esc_attr_e( 'Filter by category', 'hkla' ); ?>">
+		<ul class="filter__list">
+			<li><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" <?php echo is_category() ? '' : 'aria-current="true"'; ?>><?php esc_html_e( 'All', 'hkla' ); ?></a></li>
+			<?php foreach ( $news_cats as $cat ) : ?>
+				<?php if ( 'uncategorized' === $cat->slug ) { continue; } ?>
+				<li><a href="<?php echo esc_url( get_category_link( $cat ) ); ?>" <?php echo is_category( $cat->term_id ) ? 'aria-current="true"' : ''; ?>><?php echo esc_html( $cat->name ); ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+	</nav>
+	<?php endif; ?>
+
 	<?php if ( have_posts() ) : ?>
 		<?php
 		$first = true;
@@ -93,6 +108,26 @@ function hkla_news_meta( $post_id ) {
 		?>
 	<?php else : ?>
 		<p class="lede"><?php esc_html_e( 'News is coming.', 'hkla' ); ?></p>
+	<?php endif; ?>
+
+	<?php
+	$recognition = hkla_setting( 'recognition', array() );
+	if ( $recognition ) :
+	?>
+	<section class="band" aria-labelledby="recognition-index-heading">
+		<h2 id="recognition-index-heading" class="eyebrow"><?php esc_html_e( 'Recognition', 'hkla' ); ?></h2>
+		<ul class="recognition-list">
+			<?php foreach ( $recognition as $item ) : ?>
+				<li>
+					<span class="credits__name"><?php echo esc_html( $item['award_title'] ?? '' ); ?></span>
+					<span class="credits__role"><?php echo esc_html( trim( ( $item['organization'] ?? '' ) . ' ' . ( $item['year'] ?? '' ) ) ); ?></span>
+					<?php if ( ! empty( $item['project'] ) ) : ?>
+						<a class="text-link" href="<?php echo esc_url( get_permalink( $item['project'] ) ); ?>"><?php echo esc_html( get_the_title( $item['project'] ) ); ?></a>
+					<?php endif; ?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</section>
 	<?php endif; ?>
 </div>
 <?php

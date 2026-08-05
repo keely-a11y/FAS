@@ -8,21 +8,58 @@
 
 	var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-	/* Mobile nav toggle */
+	/* The "+" overlay menu. Full-screen when open, focus trapped, Escape
+	   closes. This is the mobile navigation; a theme flag can enable it on
+	   desktop too. */
 	var toggle = document.querySelector('.nav-toggle');
 	var nav = document.getElementById('site-nav');
 	if (toggle && nav) {
+		var closeMenu = function () {
+			nav.classList.remove('is-open');
+			document.body.classList.remove('menu-open');
+			toggle.setAttribute('aria-expanded', 'false');
+			toggle.focus();
+		};
 		toggle.addEventListener('click', function () {
 			var open = nav.classList.toggle('is-open');
+			document.body.classList.toggle('menu-open', open);
 			toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-		});
-		document.addEventListener('keydown', function (e) {
-			if (e.key === 'Escape' && nav.classList.contains('is-open')) {
-				nav.classList.remove('is-open');
-				toggle.setAttribute('aria-expanded', 'false');
-				toggle.focus();
+			if (open) {
+				var first = nav.querySelector('a');
+				if (first) { first.focus(); }
 			}
 		});
+		document.addEventListener('keydown', function (e) {
+			if (!nav.classList.contains('is-open')) { return; }
+			if (e.key === 'Escape') { closeMenu(); return; }
+			if (e.key !== 'Tab') { return; }
+			var focusables = nav.querySelectorAll('a');
+			if (!focusables.length) { return; }
+			var firstEl = toggle;
+			var lastEl = focusables[focusables.length - 1];
+			if (e.shiftKey && document.activeElement === firstEl) {
+				e.preventDefault();
+				lastEl.focus();
+			} else if (!e.shiftKey && document.activeElement === lastEl) {
+				e.preventDefault();
+				firstEl.focus();
+			}
+		});
+	}
+
+	/* Home hero slideshow: slow crossfade, ~6s per slide. Reduced motion
+	   pauses on the first frame. */
+	var slides = document.querySelectorAll('.hero__slides .hero__slide');
+	if (slides.length > 1 && !reducedMotion.matches) {
+		var current = 0;
+		slides[0].classList.add('is-current');
+		setInterval(function () {
+			slides[current].classList.remove('is-current');
+			current = (current + 1) % slides.length;
+			slides[current].classList.add('is-current');
+		}, 6000);
+	} else if (slides.length) {
+		slides[0].classList.add('is-current');
 	}
 
 	/* Scroll reveals and the drawn-line sketch treatment.
