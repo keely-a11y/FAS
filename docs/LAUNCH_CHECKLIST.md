@@ -6,7 +6,7 @@
 - [ ] Swap provisional palette hex values in `main.css` and `theme.json` for Kilograph's final values.
 - [x] Wordmark SVG (`assets/img/hkla-wordmark.svg`) is the approved HKLA asset, converted to `fill="currentColor"` so it renders ink in the header and paper in the footer.
 - [ ] Confirm the office suite before launch: the current site shows Suite 735 on one page and Suite 800 on another (address otherwise 714 West Olympic Blvd, Los Angeles, CA 90015). Phone (213) 293-3474, info@hklainc.com.
-- [ ] Crawl the old Wix sitemap.xml; enter every legacy project URL into Redirection, mapping to its new `/projects/{slug}/` equivalent. `/process-of-design`, `/journal`, `/people`, `/purpose`, and `/careers` are already handled in code.
+- [ ] Crawl the old Wix sitemap.xml; enter every legacy project URL into Redirection, mapping to its new `/projects/{slug}/` equivalent. `/process-of-design`, `/journal`, `/people`, and `/purpose` are already handled in code; `/careers` is a live page again.
 - [ ] Enter real projects, people, and page copy; delete seed content.
 - [ ] Configure WPForms with honeypot, and paste its shortcode into Site Settings, Contact form shortcode. Send a test from the live form and confirm delivery to the studio inbox and the RFP inbox.
 - [ ] Configure SEOPress: titles, XML sitemap, and set the default OG image.
