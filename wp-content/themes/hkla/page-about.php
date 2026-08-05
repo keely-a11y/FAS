@@ -37,6 +37,11 @@ the_post();
 		<ol class="principles">
 			<?php foreach ( $principles as $principle ) : ?>
 				<li class="principle reveal">
+					<?php if ( ! empty( $principle['image'] ) ) : ?>
+						<figure class="principle__media"><?php hkla_image( $principle['image'], 'hkla-half' ); ?></figure>
+					<?php else : ?>
+						<div class="principle__media principle__media--empty" aria-hidden="true"></div>
+					<?php endif; ?>
 					<h3 class="principle__title display-s"><?php echo esc_html( $principle['title'] ?? '' ); ?></h3>
 					<?php if ( ! empty( $principle['body'] ) ) : ?>
 						<div class="prose"><?php hkla_rich_text( $principle['body'] ); ?></div>

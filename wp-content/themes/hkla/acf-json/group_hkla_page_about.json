@@ -38,6 +38,15 @@
             "button_label": "Add principle",
             "sub_fields": [
                 {
+                    "key": "field_hkla_about_principle_image",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Optional. Without one, a palette tone block appears.",
+                    "return_format": "array",
+                    "preview_size": "medium"
+                },
+                {
                     "key": "field_hkla_about_principle_title",
                     "label": "Title",
                     "name": "title",
