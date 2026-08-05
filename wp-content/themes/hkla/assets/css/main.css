@@ -22,7 +22,7 @@
    -------------------------------------------------------------------------- */
 :root {
   --color-ink:    #000000;
-  --color-paper:  #EFEBE8;
+  --color-paper:  #F7F5F2;
   --color-stone:  #978E7D;
   --color-signal: #C9E35B;
   --color-white:  #FFFFFF;
@@ -144,7 +144,7 @@ button {
   font-size: var(--step-3);
   line-height: 1.05;
   letter-spacing: -0.02em;
-  font-weight: 600;
+  font-weight: 500;
   max-width: 18ch;
 }
 
@@ -152,7 +152,7 @@ button {
   font-size: var(--step-2);
   line-height: 1.12;
   letter-spacing: -0.015em;
-  font-weight: 600;
+  font-weight: 500;
   max-width: 24ch;
 }
 
@@ -160,7 +160,7 @@ button {
   font-size: var(--step-1);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  font-weight: 600;
+  font-weight: 500;
   max-width: 30ch;
 }
 
@@ -173,9 +173,10 @@ button {
 .eyebrow,
 .utility {
   font-size: var(--step--1);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
+  opacity: 0.55;
 }
 
 .eyebrow {
@@ -196,6 +197,7 @@ button {
   line-height: 1.5;
   margin-top: var(--space-1);
   max-width: var(--measure);
+  opacity: 0.6;
 }
 
 /* --------------------------------------------------------------------------
@@ -373,7 +375,7 @@ button {
 .band {
   width: var(--shell);
   margin-inline: auto;
-  padding-block: var(--space-4);
+  padding-block: var(--space-5);
 }
 
 .band--mission {
@@ -400,7 +402,8 @@ button {
 }
 
 .index-header {
-  margin-bottom: var(--space-4);
+  padding-top: var(--space-4);
+  margin-bottom: var(--space-5);
 }
 
 .index-header .lede,

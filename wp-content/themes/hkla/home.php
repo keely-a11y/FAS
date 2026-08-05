@@ -24,7 +24,7 @@ function hkla_news_meta( $post_id ) {
 ?>
 <div class="page-shell">
 	<header class="index-header">
-		<h1 class="display-l"><?php esc_html_e( 'Awards and Press', 'hkla' ); ?></h1>
+		<h1 class="display-l"><?php esc_html_e( 'News + Ideas', 'hkla' ); ?></h1>
 	</header>
 
 	<?php
