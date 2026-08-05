@@ -35,6 +35,15 @@
             "mime_types": "jpg,jpeg,png,webp,avif"
         },
         {
+            "key": "field_hkla_project_hero_image_2",
+            "label": "Hero: second image (optional)",
+            "name": "hero_image_2",
+            "type": "image",
+            "instructions": "With two images the hero splits side by side, like the reference design. Ignored when a hero video is set.",
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_hkla_hero_video",
             "label": "Hero video (optional)",
             "name": "hero_video",

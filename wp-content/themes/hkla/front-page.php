@@ -25,6 +25,7 @@ $featured     = hkla_field( 'featured_projects', false, array() );
 	<?php endif; ?>
 	<div class="hero__scrim" aria-hidden="true"></div>
 	<h1 class="hero__line display-xl"><?php echo esc_html( $hero_line ); ?></h1>
+	<p class="hero__legal"><?php echo esc_html( gmdate( 'Y' ) . ' © HKLA, Inc.' ); ?></p>
 </section>
 
 <section class="band band--mission reveal">

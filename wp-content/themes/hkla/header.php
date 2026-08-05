@@ -16,11 +16,18 @@
 <?php wp_body_open(); ?>
 <a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'hkla' ); ?></a>
 
-<header class="site-header" role="banner">
+<?php
+// Home floats the nav over the hero; project pages carry their title in the band.
+$hkla_overlay = is_front_page();
+?>
+<header class="site-header<?php echo $hkla_overlay ? ' site-header--overlay' : ''; ?>" role="banner">
 	<div class="site-header__inner">
 		<a class="site-header__brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'HKLA home', 'hkla' ); ?>">
-			<?php hkla_wordmark( 'ink' ); ?>
+			<?php hkla_wordmark( $hkla_overlay ? 'paper' : 'ink' ); ?>
 		</a>
+		<?php if ( is_singular( 'project' ) ) : ?>
+			<p class="site-header__title"><?php the_title(); ?></p>
+		<?php endif; ?>
 		<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
 			<span class="nav-toggle__label"><?php esc_html_e( 'Menu', 'hkla' ); ?></span>
 			<span class="nav-toggle__bars" aria-hidden="true"></span>

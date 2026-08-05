@@ -1305,3 +1305,124 @@ button {
     stroke-dashoffset: 0 !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Aesthetic direction pass (client reference, Aug 2026): image-forward and
+   minimal. Nav floats over the home hero; project titles live in the header
+   band over full-bleed split imagery; text blocks sit offset with generous
+   whitespace.
+   -------------------------------------------------------------------------- */
+
+/* Home: transparent header over the hero. */
+.site-header--overlay {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 30;
+  background: transparent;
+  color: var(--color-paper);
+}
+
+.site-header--overlay .nav__list a:hover,
+.site-header--overlay .nav__list a[aria-current] {
+  box-shadow: inset 0 -2px 0 var(--color-paper);
+}
+
+.site-header--overlay .nav-toggle {
+  border-color: var(--color-paper);
+  color: var(--color-paper);
+}
+
+@media (max-width: 720px) {
+  .site-header--overlay .nav {
+    background: var(--color-ink);
+    border-top-color: var(--color-ink);
+  }
+}
+
+/* Project title centered in the header band. */
+.site-header__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+  font-size: var(--step-0);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Home hero: full viewport, line bottom right, quiet legal bottom left. */
+.hero--home {
+  min-height: 100svh;
+}
+
+.hero--home .hero__line {
+  text-align: right;
+}
+
+.hero__legal {
+  position: absolute;
+  left: var(--space-3);
+  bottom: var(--space-2);
+  z-index: 2;
+  font-size: var(--step--1);
+  color: var(--color-paper);
+  opacity: 0.7;
+}
+
+/* Project hero: full-bleed imagery under the header, no scrim, no overlay
+   title. Two images sit side by side; one runs the full width. */
+.project-hero__media {
+  display: grid;
+  background: var(--color-stone);
+}
+
+@media (min-width: 800px) {
+  .project-hero__media--pair {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-hero__media img,
+.project-hero__media video {
+  width: 100%;
+  height: calc(100svh - 5.5rem);
+  min-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 799px) {
+  .project-hero__media--pair img {
+    height: calc((100svh - 5.5rem) / 2);
+    min-height: 240px;
+  }
+}
+
+/* Editorial asymmetry on project pages. */
+@media (min-width: 900px) {
+  .project .section--text > * {
+    margin-left: 45%;
+    max-width: 46ch;
+  }
+
+  .project .section--full-image {
+    margin-left: 28vw;
+  }
+
+  .project .section--full-image .caption {
+    width: auto;
+    margin-inline: 0;
+  }
+
+  .project .project-lead__headline {
+    max-width: 16ch;
+  }
+
+  .project .project-lead__intro {
+    margin-left: 45%;
+    max-width: 46ch;
+  }
+}

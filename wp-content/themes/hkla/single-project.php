@@ -17,20 +17,20 @@ $location   = hkla_field( 'location', get_the_ID() );
 
 <article class="project">
 
-	<header class="hero hero--project">
-		<?php if ( $hero_video ) : ?>
-			<video class="hero__media" autoplay muted loop playsinline preload="metadata"
-				<?php if ( $hero_image ) : ?>poster="<?php echo esc_url( is_array( $hero_image ) ? $hero_image['sizes']['hkla-wide'] ?? $hero_image['url'] : wp_get_attachment_image_url( $hero_image, 'hkla-wide' ) ); ?>"<?php endif; ?>>
-				<source src="<?php echo esc_url( $hero_video ); ?>" type="video/mp4">
-			</video>
-		<?php elseif ( $hero_image ) : ?>
-			<?php hkla_hero_image( $hero_image, 'hkla-hero', 'hero__media' ); ?>
-		<?php endif; ?>
-		<div class="hero__scrim" aria-hidden="true"></div>
-		<div class="hero__title">
-			<h1 class="display-l"><?php the_title(); ?></h1>
-			<?php if ( $location ) : ?>
-				<p class="hero__location"><?php echo esc_html( $location ); ?></p>
+	<?php $hero_image_2 = hkla_field( 'hero_image_2', get_the_ID() ); ?>
+	<header class="project-hero">
+		<h1 class="visually-hidden"><?php the_title(); ?></h1>
+		<div class="project-hero__media<?php echo ( $hero_image && $hero_image_2 ) ? ' project-hero__media--pair' : ''; ?>">
+			<?php if ( $hero_video ) : ?>
+				<video autoplay muted loop playsinline preload="metadata"
+					<?php if ( $hero_image ) : ?>poster="<?php echo esc_url( is_array( $hero_image ) ? $hero_image['sizes']['hkla-wide'] ?? $hero_image['url'] : wp_get_attachment_image_url( $hero_image, 'hkla-wide' ) ); ?>"<?php endif; ?>>
+					<source src="<?php echo esc_url( $hero_video ); ?>" type="video/mp4">
+				</video>
+			<?php elseif ( $hero_image ) : ?>
+				<?php hkla_hero_image( $hero_image, 'hkla-hero', '' ); ?>
+			<?php endif; ?>
+			<?php if ( $hero_image_2 && ! $hero_video ) : ?>
+				<?php hkla_hero_image( $hero_image_2, 'hkla-hero', '' ); ?>
 			<?php endif; ?>
 		</div>
 	</header>

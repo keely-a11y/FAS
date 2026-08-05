@@ -200,6 +200,7 @@ foreach ( $projects as $data ) {
 		update_field( 'story_headline', $data['headline'], $id );
 		update_field( 'story_intro', $data['intro'], $id );
 		update_field( 'hero_image', $hero_id, $id );
+		update_field( 'hero_image_2', $wide_id, $id );
 		foreach ( $data['facts'] as $key => $value ) {
 			update_field( $key, $value, $id );
 		}
