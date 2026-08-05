@@ -4,7 +4,7 @@
 
 - [ ] Confirm JL Jungka webfont license; add WOFF2 files (Latin subset) to `wp-content/themes/hkla/assets/fonts/` and the matching `@font-face` block at the top of `main.css`. The preload link activates automatically once `jl-jungka-regular.woff2` exists.
 - [ ] Swap provisional palette hex values in `main.css` and `theme.json` for Kilograph's final values.
-- [ ] Replace the placeholder wordmark SVG (`assets/img/hkla-wordmark.svg`) with the approved asset; keep `fill="currentColor"`.
+- [x] Wordmark SVG (`assets/img/hkla-wordmark.svg`) is the approved HKLA asset, converted to `fill="currentColor"` so it renders ink in the header and paper in the footer.
 - [ ] Confirm the office address (714 West Olympic Blvd, Suite 735, Los Angeles, CA 90015) in Site Settings.
 - [ ] Crawl the old Wix sitemap.xml; enter every legacy project URL into Redirection, mapping to its new `/projects/{slug}/` equivalent. `/process-of-design`, `/journal`, `/people`, `/purpose`, and `/careers` are already handled in code.
 - [ ] Enter real projects, people, and page copy; delete seed content.
