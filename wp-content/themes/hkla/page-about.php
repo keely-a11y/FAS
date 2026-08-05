@@ -178,10 +178,6 @@ the_post();
 	</section>
 	<?php endif; ?>
 
-	<section class="band band--invite reveal">
-		<p class="display-s invite__line"><?php echo esc_html( hkla_field( 'contact_invitation', false, 'Every client works directly with our senior team.' ) ); ?></p>
-		<p><a class="button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Start a conversation', 'hkla' ); ?></a></p>
-	</section>
 </div>
 <?php
 get_footer();

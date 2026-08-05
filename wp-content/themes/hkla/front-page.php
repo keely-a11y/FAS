@@ -1,7 +1,6 @@
 <?php
 /**
- * Home. Hero, mission, featured projects, process teaser, quote, stat band,
- * recognition, contact invitation.
+ * Home. Hero, mission, featured projects, quote, recognition.
  *
  * @package hkla
  */
@@ -51,30 +50,6 @@ $featured     = hkla_field( 'featured_projects', false, array() );
 </section>
 <?php endif; ?>
 
-<?php
-$process_sketch  = hkla_field( 'process_sketch' );
-$process_photo   = hkla_field( 'process_photo' );
-$process_caption = hkla_field( 'process_caption', false, 'Every project begins as a drawing. The hand finds what the survey cannot.' );
-if ( $process_sketch || $process_photo ) :
-?>
-<section class="band band--process-teaser reveal" aria-labelledby="process-heading">
-	<h2 id="process-heading" class="eyebrow"><?php esc_html_e( 'How we work', 'hkla' ); ?></h2>
-	<div class="pair pair--sketch">
-		<?php if ( $process_sketch ) : ?>
-			<figure class="pair__item sketch-frame js-sketch">
-				<?php hkla_image( $process_sketch, 'hkla-half', array( 'class' => 'sketch-frame__img' ) ); ?>
-			</figure>
-		<?php endif; ?>
-		<?php if ( $process_photo ) : ?>
-			<figure class="pair__item">
-				<?php hkla_image( $process_photo, 'hkla-half' ); ?>
-			</figure>
-		<?php endif; ?>
-	</div>
-	<p class="pair__caption"><?php echo esc_html( $process_caption ); ?></p>
-	<p class="band__more"><a class="text-link" href="<?php echo esc_url( home_url( '/process/' ) ); ?>"><?php esc_html_e( 'Our process', 'hkla' ); ?></a></p>
-</section>
-<?php endif; ?>
 
 <?php
 $quote_text = hkla_field( 'quote_text' );
@@ -95,23 +70,7 @@ if ( $quote_text ) :
 </section>
 <?php endif; ?>
 
-<?php
-$stats = hkla_field( 'stats', false, array() );
-if ( $stats ) :
-?>
-<section class="band band--stats" aria-labelledby="stats-heading">
-	<h2 id="stats-heading" class="eyebrow"><?php esc_html_e( 'Design as a civic act', 'hkla' ); ?></h2>
-	<dl class="stat-band">
-		<?php foreach ( $stats as $stat ) : ?>
-			<div class="stat">
-				<dt class="stat__label"><?php echo esc_html( $stat['label'] ?? '' ); ?></dt>
-				<dd class="stat__value display-m"><?php echo esc_html( $stat['value'] ?? '' ); ?></dd>
-			</div>
-		<?php endforeach; ?>
-	</dl>
-	<p class="band__more"><a class="text-link" href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About the studio', 'hkla' ); ?></a></p>
-</section>
-<?php endif; ?>
+
 
 <?php
 $recognition = hkla_field( 'recognition', false, array() );
@@ -127,10 +86,6 @@ if ( $recognition ) :
 </section>
 <?php endif; ?>
 
-<section class="band band--invite reveal">
-	<p class="display-s invite__line"><?php echo esc_html( hkla_field( 'contact_invitation', false, 'Every client works directly with our senior team.' ) ); ?></p>
-	<p><a class="button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Start a conversation', 'hkla' ); ?></a></p>
-</section>
 
 <?php
 get_footer();
