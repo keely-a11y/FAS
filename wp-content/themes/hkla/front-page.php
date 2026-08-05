@@ -29,7 +29,7 @@ $featured     = hkla_field( 'featured_projects', false, array() );
 </section>
 
 <section class="band band--mission reveal">
-	<p class="display-m mission"><?php echo esc_html( $mission ); ?></p>
+	<p class="mission"><?php echo esc_html( $mission ); ?></p>
 </section>
 
 <?php if ( $featured ) : ?>
