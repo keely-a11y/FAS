@@ -78,6 +78,36 @@ function hkla_seed_image( $label, $width = 2400, $height = 1500, $tone = 'stone'
 	return $attachment_id;
 }
 
+
+/**
+ * Sideload a real image that ships with the theme (client-supplied).
+ */
+function hkla_seed_theme_asset( $filename, $title ) {
+	$existing = get_posts(
+		array(
+			'post_type'      => 'attachment',
+			'title'          => $title,
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+		)
+	);
+	if ( $existing ) {
+		return $existing[0];
+	}
+	$path = get_template_directory() . '/assets/img/' . $filename;
+	if ( ! file_exists( $path ) ) {
+		return 0;
+	}
+	$tmp = wp_tempnam( $filename );
+	copy( $path, $tmp );
+	$id = media_handle_sideload( array( 'name' => $filename, 'tmp_name' => $tmp ), 0, $title );
+	if ( is_wp_error( $id ) ) {
+		return 0;
+	}
+	update_post_meta( $id, '_wp_attachment_image_alt', $title );
+	return $id;
+}
+
 /**
  * Create a page with a template if it does not exist. Returns the ID.
  */
@@ -295,12 +325,16 @@ if ( function_exists( 'update_field' ) ) {
 			'fields'         => 'ids',
 		)
 	);
-	update_field( 'hero_image', hkla_seed_image( 'Home hero', 2400, 1500, 'moss' ), $home_id );
+	$home_hero = hkla_seed_theme_asset( 'hero-home.jpg', 'Home hero: plaza from above' );
+	if ( ! $home_hero ) {
+		$home_hero = hkla_seed_image( 'Home hero', 2400, 1500, 'moss' );
+	}
+	update_field( 'hero_image', $home_hero, $home_id );
 	update_field(
 		'hero_slides',
 		array_filter(
 			array(
-				hkla_seed_image( 'Home hero', 2400, 1500, 'moss' ),
+				$home_hero,
 				hkla_seed_image( 'Home slide two', 2400, 1500, 'earth' ),
 				hkla_seed_image( 'Home slide three', 2400, 1500, 'stone' ),
 			)
