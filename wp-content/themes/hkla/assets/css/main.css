@@ -141,26 +141,26 @@ button {
 
 /* Display roles sit one step down the scale, per client direction. */
 .display-l {
+  font-weight: 450;
   font-size: var(--step-3);
   line-height: 1.05;
   letter-spacing: -0.02em;
-  font-weight: 500;
   max-width: 18ch;
 }
 
 .display-m {
+  font-weight: 450;
   font-size: var(--step-2);
   line-height: 1.12;
   letter-spacing: -0.015em;
-  font-weight: 500;
   max-width: 24ch;
 }
 
 .display-s {
+  font-weight: 450;
   font-size: var(--step-1);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  font-weight: 500;
   max-width: 30ch;
 }
 
@@ -272,7 +272,9 @@ button {
 
 .nav__list a:hover,
 .nav__list a[aria-current] {
-  box-shadow: inset 0 -2px 0 var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 1px;
 }
 
 .nav-toggle {
@@ -1227,27 +1229,40 @@ button {
 .site-footer__inner {
   width: var(--shell);
   margin-inline: auto;
-  padding-block: var(--space-5) var(--space-3);
+  padding-block: var(--space-3) var(--space-2);
+  font-size: var(--step--1);
+  line-height: 1.7;
 }
 
 .site-footer__line {
-  font-size: var(--step-2);
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  font-size: var(--step-0);
+  line-height: 1.5;
+  letter-spacing: 0;
   font-weight: 400;
-  max-width: 24ch;
-  margin-bottom: var(--space-4);
+  max-width: none;
+  opacity: 0.85;
+  margin-bottom: var(--space-3);
 }
 
 .site-footer__grid {
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 @media (min-width: 720px) {
   .site-footer__grid {
     grid-template-columns: 2fr 1fr;
+    align-items: start;
   }
+}
+
+.site-footer__grid .wordmark {
+  width: 3.75rem;
+  margin-bottom: var(--space-1);
+}
+
+.site-footer__grid p {
+  margin: 0;
 }
 
 .site-footer__mark {
@@ -1268,9 +1283,10 @@ button {
 }
 
 .site-footer__legal {
-  margin-top: var(--space-4);
+  margin-top: var(--space-3);
   font-size: var(--step--1);
-  color: var(--color-stone);
+  opacity: 0.5;
+  color: var(--color-paper);
 }
 
 /* --------------------------------------------------------------------------
@@ -1341,10 +1357,7 @@ button {
   color: var(--color-paper);
 }
 
-.site-header--overlay .nav__list a:hover,
-.site-header--overlay .nav__list a[aria-current] {
-  box-shadow: inset 0 -2px 0 var(--color-paper);
-}
+
 
 .site-header--overlay .nav-toggle {
   border-color: var(--color-paper);
